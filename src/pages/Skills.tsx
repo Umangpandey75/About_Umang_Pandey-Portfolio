@@ -551,7 +551,7 @@ const Skills = () => {
                 onMouseLeave={e => (e.currentTarget as HTMLDivElement).style.background = "var(--color-card)"}>
                 <span style={{ fontSize: "1.5rem", flexShrink: 0, marginTop: "0.1rem" }}>{item.emoji}</span>
                 <div style={{ flex: 1 }}>
-                  <div style={{ display: "flex", flexWrap: "wrap", justifycontent: "space-between", alignItems: "center", gap: "0.5rem", marginBottom: "0.5rem" }}>
+                  <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "space-between", alignItems: "center", gap: "0.5rem", marginBottom: "0.5rem" }}>
                     <span style={{ fontFamily: "var(--font-heading)", fontWeight: 800, fontSize: "0.95rem", color: item.color }}>{item.tech}</span>
                     <span style={{ fontFamily: "var(--font-body)", fontSize: "0.65rem", color: "var(--color-body-faint)", fontStyle: "italic" }}>→ {item.proof}</span>
                   </div>

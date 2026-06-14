@@ -386,7 +386,7 @@ const About = () => (
                 width: 52, height: 52, borderRadius: 16,
                 background: `${t.color}12`,
                 border: `1px solid ${t.color}25`,
-                display: "flex", alignItems: "center", justifycontent: "center",
+                display: "flex", alignItems: "center", justifyContent: "center",
                 marginBottom: "1.25rem",
               }}>
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke={t.color} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
