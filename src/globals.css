@@ -89,9 +89,9 @@
    Color theory: High contrast (WCAG AA+), analogous accents, desaturated bg
    ═══════════════════════════════════════════════════════ */
 [data-theme="light"] {
-  /* Backgrounds — warm off-white, not blinding pure white */
-  --color-bg:            #F5F7FF;
-  --color-bg-secondary:  #ECEFFE;
+  /* Backgrounds — warm cream, not blinding pure white */
+  --color-bg:            #FCF8F2;
+  --color-bg-secondary:  #F3EDE2;
   --color-bg-elevated:   #FFFFFF;
 
   /* Surface / Cards — white with real opacity for glassmorphism on light */
@@ -105,7 +105,7 @@
   --color-accent-violet:      #4527C8;   /* Deep indigo — AA compliant */
   --color-accent-violet-light:#6248e0;   /* Slightly lighter indigo */
 
-  /* Text — dark enough for WCAG AA on #F5F7FF bg */
+  /* Text — dark enough for WCAG AA on #FCF8F2 bg */
   --color-heading:       #0F172A;        /* Near-black slate — 16:1 contrast */
   --color-body:          #1E293B;        /* Dark slate — 12:1 contrast */
   --color-body-muted:    #475569;        /* Medium slate — 5.5:1 contrast (AA) */
@@ -118,15 +118,15 @@
   --color-border-accent: rgba(184, 98, 10, 0.35);
 
   /* Nav / Footer */
-  --color-nav-bg:        rgba(245, 247, 255, 0.92);
-  --color-nav-bg-mobile: rgba(245, 247, 255, 0.98);
-  --color-footer-bg:     rgba(236, 239, 254, 0.98);
+  --color-nav-bg:        rgba(252, 248, 242, 0.92);
+  --color-nav-bg-mobile: rgba(252, 248, 242, 0.98);
+  --color-footer-bg:     rgba(243, 237, 226, 0.98);
 
   /* Special */
-  --color-photo-bg:        #DDE2F4;
-  --color-photo-border:    #F5F7FF;
-  --color-scrollbar-track: #DDE2F4;
-  --color-loader-bg:       #F5F7FF;
+  --color-photo-bg:        #EFE8DC;
+  --color-photo-border:    #FCF8F2;
+  --color-scrollbar-track: #EFE8DC;
+  --color-loader-bg:       #FCF8F2;
   --color-tag-bg:          rgba(69, 39, 200, 0.08);
   --color-tag-border:      rgba(69, 39, 200, 0.20);
   --color-tag-text:        #4527C8;

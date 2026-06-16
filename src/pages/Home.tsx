@@ -143,7 +143,7 @@ const TermLine = ({ text, delay, color = "#00FF41" }: { text: string; delay: num
 /* ── Stats ──────────────────────────── */
 const STATS = [
   { value: "B.Tech", label: "CSE Degree" },
-  { value: "4+",     label: "Projects" },
+  { value: "10+",    label: "Projects" },
   { value: "2+",     label: "Tata Trainee Roles" },
   { value: "2026",   label: "Graduating" },
 ];
@@ -152,9 +152,9 @@ const ROLES = ["Data Analyst", "Python Developer", "Power BI Builder", "SQL Serv
 
 /* ── Featured project strip ──────────── */
 const FEATURED = [
-  { name: "Employee Performance Dashboard", url: "https://github.com/Umangpandey75", lang: "Power BI / DAX", year: "2025" },
-  { name: "Heart-IQ Predictive System",    url: "https://github.com/Umangpandey75/Heart-IQ", lang: "Python / Streamlit", year: "2026" },
-  { name: "Bug Tracking System",           url: "https://github.com/Umangpandey75", lang: "HTML / CSS / SQL", year: "2024" },
+  { name: "Heart-IQ — Cardiac Prediction", url: "https://github.com/Umangpandey75/HeartIQ-4th-year-project", lang: "Python / Streamlit", year: "2026" },
+  { name: "MindMapr-AI",                   url: "https://github.com/Umangpandey75/MindMapr-AI", lang: "Python / GenAI", year: "2026" },
+  { name: "EmailSarthi",                   url: "https://github.com/Umangpandey75/EmailSarthi", lang: "HTML / CSS / JS", year: "2026" },
 ];
 
 /* ── Currently data ───────────────────── */

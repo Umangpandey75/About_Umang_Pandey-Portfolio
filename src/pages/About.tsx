@@ -454,7 +454,7 @@ const About = () => (
           {[
             { n: "2021", label: "Year I wrote my first Python script" },
             { n: "2+",    label: "Tata Virtual Trainee Internships" },
-            { n: "4+",    label: "Functional Projects Completed" },
+            { n: "10+",   label: "Functional Projects Completed" },
             { n: "2026",  label: "Graduation Year" },
           ].map((s, i) => (
             <div key={s.label} style={{ flex: "1 1 140px", textAlign: "center", padding: "0.5rem 1rem",

@@ -25,6 +25,71 @@ export const projects: TProject[] = [
     ],
     image:          "/project_fakebuster.png",
     sourceCodeLink: "https://github.com/Umangpandey75/HeartIQ-4th-year-project",
+    liveLink:       "https://heartiqsystem.streamlit.app/",
+  },
+  {
+    name: "MindMapr-AI",
+    description:
+      "A Python-powered utility that leverages generative AI models to convert textual brainstorming and notes into structured, hierarchical visual mind maps.",
+    tags: [
+      { name: "Python",        color: "blue-text-gradient"   },
+      { name: "Generative AI", color: "green-text-gradient"  },
+      { name: "Data Viz",      color: "pink-text-gradient"   },
+    ],
+    image:          "/project_mindmetric.png",
+    sourceCodeLink: "https://github.com/Umangpandey75/MindMapr-AI",
+    liveLink:       "https://mindmetric001.vercel.app/",
+  },
+  {
+    name: "EmailSarthi",
+    description:
+      "A lightweight email automation and broadcasting platform that lets users send batch emails and custom templates with structured input validation and logs.",
+    tags: [
+      { name: "HTML5",         color: "blue-text-gradient"   },
+      { name: "CSS3",          color: "green-text-gradient"  },
+      { name: "JavaScript",    color: "pink-text-gradient"   },
+    ],
+    image:          "/project_emailsarthi.png",
+    sourceCodeLink: "https://github.com/Umangpandey75/EmailSarthi",
+    liveLink:       "https://emailsarthi.vercel.app/",
+  },
+  {
+    name: "Genderify-AI",
+    description:
+      "A full-stack image and video classification application designed to detect gender (male or female) in real-time. Features a high-accuracy, fine-tuned deep learning model served via a Python Flask API backend and an elegant, responsive React frontend.",
+    tags: [
+      { name: "Python",        color: "blue-text-gradient"   },
+      { name: "TensorFlow",    color: "green-text-gradient"  },
+      { name: "Flask & React", color: "pink-text-gradient"   },
+    ],
+    image:          "/project_genderify.png",
+    sourceCodeLink: "https://github.com/Umangpandey75/Genderify-AI-",
+    liveLink:       "https://genderifyai.vercel.app/",
+  },
+  {
+    name: "Voice to Story Generator",
+    description:
+      "An AI-powered creative writing studio that transforms spoken conversations, voice recordings, and dialogue audio files into rich, stylized narrative stories. Built on the MERN stack with the official Google Gemini SDK.",
+    tags: [
+      { name: "Gemini SDK",    color: "blue-text-gradient"   },
+      { name: "MERN Stack",    color: "green-text-gradient"  },
+      { name: "Voice AI",      color: "pink-text-gradient"   },
+    ],
+    image:          "/project_voice_story.png",
+    sourceCodeLink: "https://github.com/Umangpandey75/Voice-to-Story-Generator",
+  },
+  {
+    name: "HR Analytics Dashboard",
+    description:
+      "An interactive Power BI report designed to analyze employee attrition, workforce demographics, salary distribution, and employee retention trends. Integrates CSV dataset, models complex DAX KPIs, and delivers data-driven insights.",
+    tags: [
+      { name: "Power BI",      color: "blue-text-gradient"   },
+      { name: "DAX & Excel",   color: "green-text-gradient"  },
+      { name: "Data Viz",      color: "pink-text-gradient"   },
+    ],
+    image:          "/project_hr_dashboard.png",
+    sourceCodeLink: "https://github.com/Umangpandey75/HR-Analytics-Dashboard",
+    liveLink:       "https://app.fabric.microsoft.com/groups/me/reports/06041f81-db2c-4ef0-a0b6-d6e97363aa51/1901196bc7c6d04666c9?ctid=8869cc11-7d78-4a5c-8378-b78ce12cb498&experience=power-bi",
   },
   {
     name: "Employee Performance Dashboard",
@@ -51,31 +116,6 @@ export const projects: TProject[] = [
     sourceCodeLink: "https://github.com/Umangpandey75/SpeechTrans",
   },
   {
-    name: "EmailSarthi",
-    description:
-      "A lightweight email automation and broadcasting platform that lets users send batch emails and custom templates with structured input validation and logs.",
-    tags: [
-      { name: "HTML5",         color: "blue-text-gradient"   },
-      { name: "CSS3",          color: "green-text-gradient"  },
-      { name: "JavaScript",    color: "pink-text-gradient"   },
-    ],
-    image:          "/project_incredible_india.png",
-    sourceCodeLink: "https://github.com/Umangpandey75/EmailSarthi",
-    liveLink:       "https://emailsarthi.vercel.app",
-  },
-  {
-    name: "MindMapr-AI",
-    description:
-      "A Python-powered utility that leverages generative AI models to convert textual brainstorming and notes into structured, hierarchical visual mind maps.",
-    tags: [
-      { name: "Python",        color: "blue-text-gradient"   },
-      { name: "Generative AI", color: "green-text-gradient"  },
-      { name: "Data Viz",      color: "pink-text-gradient"   },
-    ],
-    image:          "/project_mindmetric.png",
-    sourceCodeLink: "https://github.com/Umangpandey75/MindMapr-AI",
-  },
-  {
     name: "Resume-Builder",
     description:
       "A responsive client-side web application designed to help job-seekers build, preview, and format resume templates dynamically using structured input forms and print-ready styles.",
@@ -97,17 +137,5 @@ export const projects: TProject[] = [
     ],
     image:          "/project_vocalai.png",
     sourceCodeLink: "https://github.com/Umangpandey75/Vocal-AI",
-  },
-  {
-    name: "Live Weather Updates",
-    description:
-      "A Python script and dashboard application that queries live weather data from open APIs to display atmospheric metrics (temperature, humidity, wind) for user-specified cities.",
-    tags: [
-      { name: "Python",        color: "blue-text-gradient"   },
-      { name: "API Fetch",     color: "green-text-gradient"  },
-      { name: "JSON Parsing",  color: "pink-text-gradient"   },
-    ],
-    image:          "/project_weather.png",
-    sourceCodeLink: "https://github.com/Umangpandey75/Live-weather-updata-2-main",
   },
 ];

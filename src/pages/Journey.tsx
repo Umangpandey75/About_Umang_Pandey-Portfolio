@@ -769,7 +769,7 @@ const CertCard = ({ item, i }: { item: Achievement; i: number }) => {
                   </a>
                 )}
               </div>
-            ) : (
+            ) : item.type === "education" ? null : (
               <div style={{
                 marginTop: "1rem",
                 padding: "0.6rem 0.85rem",
