@@ -62,7 +62,7 @@ export const PROJECTS = [
     year: "2026",
     desc: "An AI-powered creative writing studio that transforms spoken conversations, voice recordings, and dialogue audio files into rich, stylized narrative stories. Built on the MERN stack with the official Google Gemini SDK.",
     tags: ["Gemini SDK", "MERN Stack", "React", "Node.js", "Voice AI"],
-    live: "#",
+    live: "https://voicetostory.vercel.app/",
     github: "https://github.com/Umangpandey75/Voice-to-Story-Generator",
     color: "#E8A045",
     featured: false,
