@@ -1,15 +1,99 @@
 # 🌌 Premium Interactive 3D Developer Portfolio
 
-Welcome to my interactive **3D Developer Portfolio**! This is a modern, high-performance web experience built with **React, Three.js (React Three Fiber), Framer Motion, and CSS Custom Properties** to showcase my software development skills, data analytics achievements, and technical credentials.
+<div align="center">
+  <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React" />
+  <img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" />
+  <img src="https://img.shields.io/badge/Vite-B73BFE?style=for-the-badge&logo=vite&logoColor=FFD62E" alt="Vite" />
+  <img src="https://img.shields.io/badge/Framer_Motion-0055FF?style=for-the-badge&logo=framer&logoColor=white" alt="Framer Motion" />
+</div>
+
+<br/>
+
+Welcome to my interactive **3D Developer Portfolio**! This is a modern, high-performance web experience built with **React, TypeScript, Vite, and Framer Motion** to showcase my software development skills, data analytics achievements, and technical credentials.
 
 ---
 
 ## 🔗 Live Links & Profiles
 
-- **Portfolio**: https://umangpandey.vercel.app/
-- **GitHub Repository**: [github.com/Umangpandey75](https://github.com/Umangpandey75)
-- **LinkedIn Profile**: [linkedin.com/in/umang-pandey-01b486273](https://www.linkedin.com/in/umang-pandey-01b486273)
-- **Contact Email**: `umangpandey.co@gmail.com`
+- 🌍 **Portfolio**: [umangpandey.vercel.app](https://umangpandey.vercel.app/)
+- 💻 **GitHub Repository**: [github.com/Umangpandey75](https://github.com/Umangpandey75)
+- 👔 **LinkedIn Profile**: [linkedin.com/in/umang-pandey-01b486273](https://www.linkedin.com/in/umang-pandey-01b486273)
+- 📧 **Contact Email**: `umangpandey.co@gmail.com`
+
+---
+
+## 🏗️ Project Architecture & Flow Graph
+
+```mermaid
+graph TD;
+    App-->Router[React Router DOM];
+    Router-->Layout;
+    Layout-->Navbar;
+    Layout-->Footer;
+    Layout-->GlobalEffects[Global Effects: Cursor, ProgressBar];
+    
+    Router-->Suspense[React Suspense Lazy Load];
+    
+    Suspense-->Home[Home Page];
+    Suspense-->About[About Page];
+    Suspense-->Skills[Skills Page];
+    Suspense-->Projects[Projects Page];
+    Suspense-->Journey[Journey Page];
+    Suspense-->Contact[Contact Page];
+
+    Projects-.->ProjectsData[(data.ts - Projects)];
+    Skills-.->SkillsData[(data.ts - Skills)];
+    Journey-.->JourneyData[(data.ts - Journey)];
+    
+    Contact-->GoogleSheets[Google Sheets API / Form Submit];
+    
+    classDef page fill:#6B48FF,stroke:#fff,stroke-width:2px,color:#fff,rx:8px;
+    classDef comp fill:#222,stroke:#E8A045,stroke-width:2px,color:#fff,rx:8px;
+    classDef data fill:#00CEA8,stroke:#fff,stroke-width:2px,color:#fff,rx:8px;
+    
+    class Home,About,Skills,Projects,Journey,Contact page;
+    class Navbar,Footer,GlobalEffects comp;
+    class ProjectsData,SkillsData,JourneyData data;
+```
+
+---
+
+## 📁 Project Structure
+
+```text
+portfolio-main/
+├── src/
+│   ├── components/
+│   │   ├── layout/
+│   │   │   ├── Navbar.tsx      # Navigation with mobile menu
+│   │   │   └── Footer.tsx      # Global footer component
+│   │   └── GlobalEffects.tsx   # Custom cursor & scroll progress
+│   ├── context/
+│   │   └── ThemeContext.tsx    # Light/Dark mode state management
+│   ├── pages/                  # Modular Page Components
+│   │   ├── Home/
+│   │   │   └── Home.tsx
+│   │   ├── About/
+│   │   │   └── About.tsx
+│   │   ├── Skills/
+│   │   │   ├── Skills.tsx
+│   │   │   └── data.ts         # Static data for Skills
+│   │   ├── Projects/
+│   │   │   ├── Projects.tsx
+│   │   │   └── data.ts         # Project portfolio items
+│   │   ├── Journey/
+│   │   │   ├── Journey.tsx
+│   │   │   └── data.ts         # Certifications & Resume data
+│   │   └── Contact/
+│   │       └── Contact.tsx     # Google Sheets connected form
+│   ├── App.tsx                 # Routing & Layout wrapper
+│   ├── main.tsx                # React entry point
+│   └── globals.css             # CSS variables & global styling
+├── _archive/                   # Deprecated files & legacy code
+├── public/                     # Static assets (images, resumes)
+├── package.json
+└── vite.config.ts
+```
 
 ---
 
@@ -40,7 +124,7 @@ Welcome to my interactive **3D Developer Portfolio**! This is a modern, high-per
   5. **MindMapr-AI** (Python, Generative AI, NLP)
   6. **Resume Builder** (HTML, CSS, JS)
   7. **Vocal-AI** (Python, Voice Analytics, NLP)
-  8. **Live Weather Updates** (Python, API Integration, JSON Parsing)
+  8. **Voice to Story Generator** (MERN, Google Gemini SDK)
 
 ### 4. 🚀 Modern Creative Web Tech
 - **Responsive 3D Elements**: Floating 3D geometries and structures rendered using React Three Fiber.
@@ -62,8 +146,8 @@ To run this project locally, follow these steps:
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/Umangpandey75/portfolio.git
-   cd portfolio
+   git clone https://github.com/Umangpandey75/About_Umang_Pandey-Portfolio.git
+   cd About_Umang_Pandey-Portfolio
    ```
 
 2. **Install dependencies**:
@@ -72,12 +156,7 @@ To run this project locally, follow these steps:
    ```
 
 3. **Configure Environment Variables**:
-   Create a `.env` file in the root directory and add your EmailJS configuration for the Contact form:
-   ```env
-   VITE_EMAILJS_SERVICE_ID=your_service_id
-   VITE_EMAILJS_TEMPLATE_ID=your_template_id
-   VITE_EMAIL_JS_ACCESS_TOKEN=your_access_token
-   ```
+   Create a `.env` file in the root directory if needed for any API keys. The contact form uses Google Apps Script directly.
 
 4. **Start the local development server**:
    ```bash
@@ -103,4 +182,6 @@ This project is licensed under the MIT License.
 
 ---
 
-*Made with ❤️ by Umang Pandey*
+<div align="center">
+  <i>Made with ❤️ by Umang Pandey</i>
+</div>
