@@ -24,8 +24,8 @@ export const projects: TProject[] = [
       { name: "Plotly",        color: "blue-text-gradient"   },
     ],
     image:          "/project_fakebuster.png",
-    sourceCodeLink: "https://github.com/Umangpandey75/HeartIQ-4th-year-project",
-    liveLink:       "https://heartiqsystem.streamlit.app/",
+    sourceCodeLink: "https://github.com/Umangpandey75/-Heart-IQ-Cardiac-Prediction-System",
+    liveLink:       "https://heartiqai.vercel.app/",
   },
   {
     name: "MindMapr-AI",
