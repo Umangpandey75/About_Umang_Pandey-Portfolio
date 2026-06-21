@@ -16,19 +16,25 @@ import { useLocation } from "react-router-dom";
 
 /* ══════════════════════════════════════════════════════════════
    1.  CUSTOM CURSOR
+   This replaces the default mouse pointer with a glowing dot and an outer ring that lags slightly behind for a smooth effect.
    ══════════════════════════════════════════════════════════════ */
 export const CustomCursor = () => {
+  // useRef is like a "box" that can hold a mutable value in its `.current` property without re-rendering the component.
+  // We use it here to hold direct references to the HTML elements so we can update their styles extremely fast.
   const dot   = useRef<HTMLDivElement>(null);
   const ring  = useRef<HTMLDivElement>(null);
   const raf   = useRef<number>(0);
   const pos   = useRef({ x: -200, y: -200 });
   const ring0 = useRef({ x: -200, y: -200 });
+  // useState triggers a component re-render when the value changes. We use this for hover/click visual states.
   const [hovered, setHovered] = useState(false);
   const [clicked, setClicked] = useState(false);
   const [hidden,  setHidden]  = useState(false);
   const [isTouchDevice, setIsTouchDevice] = useState(false);
 
+  // useEffect with an empty array `[]` runs only ONCE when the component first mounts.
   useEffect(() => {
+    // Check if the user is on a mobile phone / touch screen
     const isTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
     setIsTouchDevice(isTouch);
   }, []);
@@ -141,9 +147,12 @@ export const CustomCursor = () => {
 
 /* ══════════════════════════════════════════════════════════════
    2.  SCROLL PROGRESS BAR
+   This creates the thin gradient bar at the very top of the screen that fills up as you scroll down.
    ══════════════════════════════════════════════════════════════ */
 export const ScrollProgressBar = () => {
+  // useScroll gives us a value from 0 to 1 representing how far down the page we've scrolled
   const { scrollYProgress } = useScroll();
+  // useSpring makes the bar stretch smoothly instead of instantly jumping
   const scaleX = useSpring(scrollYProgress, { stiffness: 200, damping: 30, restDelta: 0.001 });
 
   return (
@@ -165,13 +174,17 @@ export const ScrollProgressBar = () => {
 
 /* ══════════════════════════════════════════════════════════════
    3.  PAGE TRANSITION WIPE
+   When you click a link, this creates the cinematic black wipe effect with the spinning star and "AG" text.
    ══════════════════════════════════════════════════════════════ */
 export const PageTransition = () => {
+  // We need to know when the route changes so we can trigger the animation
   const location = useLocation();
 
   return (
+    // AnimatePresence allows elements to animate *out* when they are removed from the screen
     <AnimatePresence mode="wait">
       <motion.div
+        // Changing the "key" tells React that this is a completely new element, forcing the animation to run again
         key={location.pathname + "-transition"}
         initial={{ scaleY: 0, originY: 0 }}
         animate={{ scaleY: [0, 1, 1, 0], originY: ["0%", "0%", "100%", "100%"] }}
@@ -351,6 +364,7 @@ export const FloatingShapes = () => {
 
 /* ══════════════════════════════════════════════════════════════
    DEFAULT EXPORT — mount all four at once
+   This component just bundles the four effects together so we only have to import ONE thing into App.tsx.
    ══════════════════════════════════════════════════════════════ */
 const GlobalEffects = () => (
   <>

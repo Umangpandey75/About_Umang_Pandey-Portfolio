@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Tilt from "react-parallax-tilt";
-import { useTheme } from "../context/ThemeContext";
+import { useTheme } from "../../context/ThemeContext";
 
 /* ── Theme-safe color resolver ────────────────────────── */
 const LIGHT_COLOR_MAP: Record<string, string> = {
@@ -16,72 +16,17 @@ function useDisplayColor(rawColor: string): string {
   return LIGHT_COLOR_MAP[rawColor] ?? rawColor;
 }
 
-const CDN = "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons";
+import { type Skill, SKILLS, CATEGORIES, CAT_COLOR, CODE_LINES } from "./data";
 
-type Skill = {
-  name: string;
-  cat: string;
-  icon: string;
-  color: string;
-};
-
-const SKILLS: Skill[] = [
-  /* Languages */
-  { name: "Python",     cat: "Language",  icon: `${CDN}/python/python-original.svg`,          color: "#3776AB" },
-  { name: "SQL",        cat: "Database",  icon: `${CDN}/postgresql/postgresql-original.svg`,  color: "#336791" },
-  { name: "SQL Server", cat: "Database",  icon: `${CDN}/microsoftsqlserver/microsoftsqlserver-plain.svg`, color: "#CC292B" },
-  { name: "MySQL",      cat: "Database",  icon: `${CDN}/mysql/mysql-original.svg`,            color: "#00758F" },
-  /* Data Analysis */
-  { name: "Pandas",     cat: "Analysis",  icon: `${CDN}/pandas/pandas-original.svg`,          color: "#150458" },
-  { name: "NumPy",      cat: "Analysis",  icon: `${CDN}/numpy/numpy-original.svg`,           color: "#013243" },
-  /* Web Technologies */
-  { name: "React",      cat: "Web Tech",  icon: `${CDN}/react/react-original.svg`,           color: "#61DAFB" },
-  { name: "JavaScript", cat: "Web Tech",  icon: `${CDN}/javascript/javascript-original.svg`,  color: "#F7DF1E" },
-  { name: "HTML5",      cat: "Web Tech",  icon: `${CDN}/html5/html5-original.svg`,            color: "#E34F26" },
-  { name: "CSS3",       cat: "Web Tech",  icon: `${CDN}/css3/css3-original.svg`,              color: "#264DE4" },
-  /* Tools */
-  { name: "Git",        cat: "Tools",     icon: `${CDN}/git/git-original.svg`,                color: "#F05032" },
-  { name: "GitHub",     cat: "Tools",     icon: `${CDN}/github/github-original.svg`,          color: "#ffffff"  },
-  { name: "VS Code",    cat: "Tools",     icon: `${CDN}/vscode/vscode-original.svg`,          color: "#007ACC" },
-  { name: "Jupyter",    cat: "Tools",     icon: `${CDN}/jupyter/jupyter-original.svg`,        color: "#F37626" },
-];
-
-const CATEGORIES = ["All", "Language", "Database", "Analysis", "Web Tech", "Tools"];
-
-const CAT_COLOR: Record<string, string> = {
-  All:      "#E8A045",
-  Language: "#3776AB",
-  Database: "#336791",
-  Analysis: "#150458",
-  "Web Tech": "#61DAFB",
-  Tools:    "#F05032",
-};
-
-/* ── Vibe-Coding Terminal ─────────────────────────── */
-const CODE_LINES = [
-  { text: "const umang = new DataAnalyst({", color: "#E8A045" },
-  { text: '  name: "Umang Pandey",', color: "#61DAFB" },
-  { text: '  stack: ["Python", "SQL", "Power BI"],', color: "#86efac" },
-  { text: '  passion: "Unlocking insights from data",', color: "#c4b5fd" },
-  { text: "  available: true,  // ✅ Open to Internship", color: "#6ee7b7" },
-  { text: "});", color: "#E8A045" },
-  { text: "", color: "" },
-  { text: "umang.analyzeData({", color: "#f9a8d4" },
-  { text: '  source: "📊 multiple databases (SQL, Excel)",', color: "#fcd34d" },
-  { text: '  tools: ["Power BI", "Python (Pandas)", "SQL Server"],', color: "#7dd3fc" },
-  { text: '  deliver: "actionable business insights",', color: "#6ee7b7" },
-  { text: "});", color: "#f9a8d4" },
-  { text: "", color: "" },
-  { text: "// 🚀 Hands-on Analytics Projects", color: "#94a3b8" },
-  { text: "// 🏆 Tata virtual internship experiences", color: "#94a3b8" },
-  { text: "// 🎓 B.Tech CSE Student (Class of 2026)", color: "#94a3b8" },
-];
-
+// The VibeTerminal component creates a fake IDE window that types out code line-by-line!
 const VibeTerminal = () => {
+  // `visibleLines` tracks how many complete lines of code are currently shown
   const [visibleLines, setVisibleLines] = useState(0);
+  // `charCount` tracks how many characters of the *current* line have been typed out
   const [charCount, setCharCount] = useState(0);
   const termRef = useRef<HTMLDivElement>(null);
 
+  // This useEffect acts as our typing engine. It runs repeatedly to update the state.
   useEffect(() => {
     if (visibleLines >= CODE_LINES.length) return;
     const currentLine = CODE_LINES[visibleLines];
@@ -187,12 +132,17 @@ const VibeTerminal = () => {
   );
 };
 
-/* ── Skill card (grid) ────────────────────────────── */
+/* ── Skill card (grid) ────────────────────────────── 
+   This component renders a single skill (like Python or React) as a 3D glass card.
+   It uses the `react-parallax-tilt` library to make the card rotate when you hover!
+*/
 const SkillCard = ({ skill, i }: { skill: Skill; i: number }) => {
+  // If the user is in light mode, we adjust colors so white icons are visible on light backgrounds
   const displayColor = useDisplayColor(skill.color);
   const isWhiteIcon = skill.color === "#ffffff";
 
   return (
+    // `layout` tells Framer Motion to smoothly animate this card to its new position if the grid changes
     <motion.div
       initial={{ opacity: 0, y: 30, scale: 0.9 }}
       animate={{ opacity: 1, y: 0, scale: 1 }}
@@ -291,8 +241,13 @@ const SkillCard = ({ skill, i }: { skill: Skill; i: number }) => {
   );
 };
 
+// The main Skills page component
 const Skills = () => {
+  // State to track which filter category is currently selected (e.g., "All", "Frontend", "Backend")
   const [active, setActive] = useState("All");
+  
+  // We filter the SKILLS array based on the `active` category.
+  // If "All" is selected, we show everything. Otherwise, only show skills matching the category.
   const shown = active === "All" ? SKILLS : SKILLS.filter((s) => s.cat === active);
 
   return (

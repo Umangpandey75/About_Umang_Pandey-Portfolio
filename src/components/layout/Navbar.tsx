@@ -1,8 +1,14 @@
+// useState lets us keep track of changing data (like if the menu is open or closed)
+// useEffect lets us run code automatically (like listening for scrolling)
 import { useState, useEffect } from "react";
+// NavLink is a special link from React Router that knows when it is "active"
 import { NavLink, useLocation } from "react-router-dom";
+// motion allows us to add smooth animations to HTML elements easily
 import { motion, AnimatePresence } from "framer-motion";
+// Our custom hook to read the current theme (dark/light)
 import { useTheme } from "../../context/ThemeContext";
 
+// An array of objects defining all the links in the navigation bar
 const NAV_LINKS = [
   { label: "Home",     path: "/" },
   { label: "About",    path: "/about" },
@@ -161,19 +167,28 @@ const Hamburger = ({ open, onClick }: { open: boolean; onClick: () => void }) =>
   </button>
 );
 
+// The main Navbar component that combines all the smaller pieces above
 const Navbar = () => {
+  // State to track if the user has scrolled down the page (true/false)
   const [scrolled, setScrolled] = useState(false);
+  // State to track if the mobile hamburger menu is currently open (true/false)
   const [menuOpen, setMenuOpen] = useState(false);
+  
+  // useLocation gives us the current URL. We use it to close the menu when the user navigates!
   const location = useLocation();
   const { theme } = useTheme();
 
   /* Close mobile menu on route change */
+  // The dependency array `[location]` means this runs every time the URL changes.
   useEffect(() => { setMenuOpen(false); }, [location]);
 
   /* Detect scroll */
+  // We use useEffect to add an event listener when the component first loads `[]`.
   useEffect(() => {
+    // Check if the scroll distance from top is greater than 20 pixels
     const onScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", onScroll);
+    // Cleanup function: React runs this when the component unmounts to prevent memory leaks
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 

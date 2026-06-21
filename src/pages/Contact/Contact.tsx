@@ -43,6 +43,7 @@ const CONTACT_INFO = [
   },
 ];
 
+// We define a Type for our Form so TypeScript ensures we always have these 4 fields.
 type FormState = { name: string; email: string; subject: string; message: string };
 
 const inputBase: React.CSSProperties = {
@@ -70,14 +71,18 @@ const focusOff = (e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) =
 
 const Contact = () => {
   const formRef = useRef<HTMLFormElement>(null);
+  // This state object holds whatever the user types into the input boxes
   const [form, setForm]     = useState<FormState>({ name: "", email: "", subject: "", message: "" });
+  // We use this state to show a loading spinner, or a success/error message
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
 
+  // A single function that updates any input field when the user types
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
     setForm((f) => ({ ...f, [e.target.name]: e.target.value }));
 
+  // This runs when the user clicks "Send Message"
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
+    e.preventDefault(); // Prevents the page from refreshing
 
     if (SHEET_URL === "YOUR_GOOGLE_SCRIPT_URL") {
       alert("⚠️ Google Sheet URL not set yet! Follow the setup guide.");

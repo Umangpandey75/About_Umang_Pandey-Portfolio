@@ -1,0 +1,11 @@
+# File Rename Status
+
+- `Home/index.tsx` -> `Home/Home.tsx`
+- `About/index.tsx` -> `About/About.tsx`
+- `Skills/index.tsx` -> `Skills/Skills.tsx`
+- `Projects/index.tsx` -> `Projects/Projects.tsx`
+- `Journey/index.tsx` -> `Journey/Journey.tsx`
+- `Contact/index.tsx` -> `Contact/Contact.tsx`
+
+Updated imports in `App.tsx` and `src/pages/index.ts`.
+Awaiting TypeScript verification.

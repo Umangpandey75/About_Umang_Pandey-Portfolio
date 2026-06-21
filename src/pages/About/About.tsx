@@ -1,9 +1,12 @@
 import { useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 
-/* ── Personality Radar SVG ──────────────────────────────────────────────────── */
+/* ── Personality Radar SVG ──────────────────────────────────────────────────── 
+   This builds the cool spider-web "radar" chart using plain SVG and math!
+   No external charting libraries used.
+*/
 const RADAR_TRAITS = [
-  { label: "Curiosity",     score: 0.92 },
+  { label: "Curiosity",     score: 0.92 }, // Score out of 1.0
   { label: "Analysis",      score: 0.95 },
   { label: "Discipline",    score: 0.88 },
   { label: "Problem Solving", score: 0.93 },
@@ -13,6 +16,7 @@ const RADAR_TRAITS = [
   { label: "Speed",         score: 0.84 },
 ];
 
+// Helper function: Converts polar coordinates (angle + radius) to X/Y points on a screen
 const polarToXY = (angle: number, r: number, cx: number, cy: number) => ({
   x: cx + r * Math.sin(angle),
   y: cy - r * Math.cos(angle),
@@ -25,6 +29,7 @@ const PersonalityRadar = () => {
   const R   = 150;
   const ref = useRef<SVGPolygonElement>(null);
 
+  // This function generates the SVG polygon string (e.g. "10,20 30,40 ...") based on scores
   const buildPoints = (scale: number) =>
     RADAR_TRAITS.map((t, i) => {
       const angle  = (2 * Math.PI * i) / n;
@@ -32,6 +37,8 @@ const PersonalityRadar = () => {
       return `${pt.x},${pt.y}`;
     }).join(" ");
 
+  // useEffect here uses IntersectionObserver to detect when the user scrolls the chart into view
+  // and animates the polygon stretching outwards!
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
@@ -236,6 +243,7 @@ const About = () => (
           About <span className="saffron-text-gradient">Me</span>
         </motion.h1>
 
+        {/* display: flex and flexWrap: wrap make the layout responsive. On small screens, items stack vertically. */}
         <div style={{ display: "flex", gap: "5rem", alignItems: "flex-start", flexWrap: "wrap" }}>
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
@@ -374,10 +382,12 @@ const About = () => (
           viewport={{ once: true }}
           style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(260px, 1fr))", gap: "1.5rem" }}
         >
+          {/* We map over our TRAITS array here, creating a card for each strength */}
           {TRAITS.map((t) => (
             <motion.div
               key={t.title}
               variants={itemVariants}
+              // whileHover adds a micro-interaction when the user mouses over the card
               whileHover={{ y: -6, scale: 1.02 }}
               className="glass-card"
               style={{ padding: "2rem 1.75rem", borderRadius: 20, cursor: "default", border: "1px solid rgba(255,255,255,0.05)" }}

@@ -2,153 +2,24 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Tilt from "react-parallax-tilt";
 
-const PROJECTS = [
-  {
-    id: "heart-iq",
-    title: "Heart-IQ — Cardiac Prediction",
-    subtitle: "Scikit-Learn Prediction Web App",
-    year: "2026",
-    desc: "Built an end-to-end cardiac risk prediction web app that analyzes patient clinical profiles and outputs heart disease probability scores using a pre-trained Scikit-learn ML model. Features SMTP OTP recovery and interactive Plotly visualizations.",
-    tags: ["Python", "Streamlit", "Scikit-Learn", "Plotly", "ML"],
-    live: "https://heartiqsystem.streamlit.app/",
-    github: "https://github.com/Umangpandey75/HeartIQ-4th-year-project",
-    color: "#6B48FF",
-    featured: true,
-    img: "/project_fakebuster.png",
-  },
-  {
-    id: "mindmapr-ai",
-    title: "MindMapr-AI",
-    subtitle: "AI-Powered Text-to-Mindmap",
-    year: "2026",
-    desc: "A Python-powered utility that leverages generative AI models to convert textual brainstorming, notes, and documentation into structured, hierarchical visual mind maps for study and reference.",
-    tags: ["Python", "Generative AI", "Data Structures", "NLP"],
-    live: "https://mindmetric001.vercel.app/",
-    github: "https://github.com/Umangpandey75/MindMapr-AI",
-    color: "#6B48FF",
-    featured: true,
-    img: "/project_mindmetric.png",
-  },
-  {
-    id: "email-sarthi",
-    title: "EmailSarthi",
-    subtitle: "Automated Email Broadcasting",
-    year: "2026",
-    desc: "A lightweight email automation and broadcasting platform that lets users send batch emails and templates with custom validations, reliable tracking, structured input forms, and automated logs.",
-    tags: ["HTML5", "CSS3", "JavaScript", "Email API", "Automation"],
-    live: "https://emailsarthi.vercel.app/",
-    github: "https://github.com/Umangpandey75/EmailSarthi",
-    color: "#E8A045",
-    featured: true,
-    img: "/project_emailsarthi.png",
-  },
-  {
-    id: "genderify-ai",
-    title: "Genderify-AI",
-    subtitle: "AI Image & Video Classifier",
-    year: "2026",
-    desc: "A full-stack image and video classification application designed to detect gender (male or female) in real-time. Features a high-accuracy, fine-tuned deep learning model served via a Python Flask API backend and an elegant, responsive React frontend.",
-    tags: ["Python", "TensorFlow", "Flask", "React", "CNN"],
-    live: "https://genderifyai.vercel.app/",
-    github: "https://github.com/Umangpandey75/Genderify-AI-",
-    color: "#00CEA8",
-    featured: false,
-    img: "/project_genderify.png",
-  },
-  {
-    id: "voice-to-story",
-    title: "Voice to Story Generator",
-    subtitle: "AI Creative Writing Studio",
-    year: "2026",
-    desc: "An AI-powered creative writing studio that transforms spoken conversations, voice recordings, and dialogue audio files into rich, stylized narrative stories. Built on the MERN stack with the official Google Gemini SDK.",
-    tags: ["Gemini SDK", "MERN Stack", "React", "Node.js", "Voice AI"],
-    live: "#",
-    github: "https://github.com/Umangpandey75/Voice-to-Story-Generator",
-    color: "#E8A045",
-    featured: false,
-    img: "/project_voice_story.png",
-  },
-  {
-    id: "hr-analytics-dashboard",
-    title: "HR Analytics Dashboard",
-    subtitle: "Power BI Attrition Dashboard",
-    year: "2025",
-    desc: "An interactive Power BI report designed to analyze employee attrition, workforce demographics, salary distribution, and employee retention trends. Integrates CSV dataset, models complex DAX KPIs, and delivers data-driven insights.",
-    tags: ["Power BI", "DAX", "Excel", "Data Analytics"],
-    live: "https://app.fabric.microsoft.com/groups/me/reports/06041f81-db2c-4ef0-a0b6-d6e97363aa51/1901196bc7c6d04666c9?ctid=8869cc11-7d78-4a5c-8378-b78ce12cb498&experience=power-bi",
-    github: "https://github.com/Umangpandey75/HR-Analytics-Dashboard",
-    color: "#6B48FF",
-    featured: false,
-    img: "/project_hr_dashboard.png",
-  },
-  {
-    id: "performance-dashboard",
-    title: "Employee Performance Dashboard",
-    subtitle: "Power BI Analytics Dashboard",
-    year: "2025",
-    desc: "Engineered an interactive Power BI dashboard by integrating data from multiple sources (Excel, SQL Server, CSV), reducing manual reporting time by 10%. Designed complex DAX measures and calculated columns to derive KPIs like performance scores, attendance rates, and departmental comparisons. Implemented dynamic row-level security (RLS) to manage data visibility.",
-    tags: ["Power BI", "SQL Server", "Excel", "DAX", "Data Viz"],
-    live: "#",
-    github: "https://github.com/Umangpandey75",
-    color: "#E8A045",
-    featured: false,
-    img: "/project_gitglow.png",
-  },
-  {
-    id: "speech-trans",
-    title: "SpeechTrans — AI Translation",
-    subtitle: "AI Audio/Video Hindi Dubber",
-    year: "2026",
-    desc: "An AI-based speech translation system that automatically converts English audio/video into natural, synchronized Hindi speech. Developed for automated dubbing, translation accessibility, and cross-language communication using voice analysis.",
-    tags: ["Python", "AI Dubbing", "Jupyter", "Acoustics"],
-    live: "#",
-    github: "https://github.com/Umangpandey75/SpeechTrans",
-    color: "#00CEA8",
-    featured: false,
-    img: "/project_yogaflow.png",
-  },
-  {
-    id: "resume-builder",
-    title: "Resume Builder",
-    subtitle: "Dynamic CV Structuring App",
-    year: "2026",
-    desc: "A responsive client-side web application designed to help job-seekers build, preview, and format resume templates dynamically using structured input forms and print-ready CSS styles.",
-    tags: ["HTML5", "CSS3", "JavaScript", "Branding"],
-    live: "#",
-    github: "https://github.com/Umangpandey75/Resume-Builder",
-    color: "#00CEA8",
-    featured: false,
-    img: "/project_portfolio3d.png",
-  },
-  {
-    id: "vocal-ai",
-    title: "Vocal-AI",
-    subtitle: "Speech Recognition & Speech-to-Text",
-    year: "2026",
-    desc: "A voice analysis and processing application built in Python that detects acoustic features, records user speech, and performs speech-to-text with semantic keyword highlights.",
-    tags: ["Python", "Voice Analytics", "NLP", "Speech-to-Text"],
-    live: "#",
-    github: "https://github.com/Umangpandey75/Vocal-AI",
-    color: "#E8A045",
-    featured: false,
-    img: "/project_vocalai.png",
-  },
-];
-
-type Project = (typeof PROJECTS)[0];
-
+import { PROJECTS, type Project } from "./data";
+// SVG Icon for the "External Link" button
 const ExternalIcon = () => (
   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
     <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/>
   </svg>
 );
 
+// SVG Icon for the "GitHub" button
 const GitHubIcon = () => (
   <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
     <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
   </svg>
 );
 
+/* ── Project Card Component ──────────────────────────────────── 
+   This component takes a `project` object as a prop and displays it in a beautiful 3D card.
+*/
 const ProjectCard = ({ project }: { project: Project }) => (
   <Tilt tiltMaxAngleX={7} tiltMaxAngleY={7} glareEnable glareMaxOpacity={0.07} glareColor={project.color} glarePosition="all" style={{ transformStyle: "preserve-3d", height: "100%" }}>
     <motion.div
@@ -169,6 +40,9 @@ const ProjectCard = ({ project }: { project: Project }) => (
           onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; }}
         />
         <div style={{ position: "absolute", inset: 0, background: `linear-gradient(180deg, transparent 65%, rgba(10,10,26,0.85) 100%)`, pointerEvents: "none" }} />
+        {/* This is called "Conditional Rendering". 
+            The `&&` means "If the project is featured, then render the div on the right. Otherwise, render nothing."
+        */}
         {project.featured && (
           <div style={{ position: "absolute", top: 12, right: 12, background: `${project.color}22`, border: `1px solid ${project.color}66`,
             borderRadius: 9999, padding: "0.2rem 0.65rem", fontFamily: "var(--font-body)", fontSize: "0.68rem", fontWeight: 700,
@@ -210,8 +84,14 @@ const ProjectCard = ({ project }: { project: Project }) => (
   </Tilt>
 );
 
+/* ── Main Projects Page ──────────────────────────────────────── 
+   This displays the grid of projects and handles filtering.
+*/
 const Projects = () => {
+  // `filter` state determines which tab is active ("all" or "featured")
   const [filter, setFilter] = useState<"all" | "featured">("all");
+  
+  // Filter the list of projects based on the active tab
   const shown = filter === "featured" ? PROJECTS.filter((p) => p.featured) : PROJECTS;
 
   return (
@@ -240,9 +120,12 @@ const Projects = () => {
             </div>
           </div>
 
+          {/* AnimatePresence handles elements being removed from the screen.
+              When `filter` changes, the old grid fades out and the new grid fades in. */}
           <AnimatePresence mode="wait">
             <motion.div key={filter} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.3 }}
               style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(340px, 1fr))", gap: "1.75rem" }}>
+              {/* `map` creates a ProjectCard for each item in the `shown` array */}
               {shown.map((project) => (<ProjectCard key={project.id} project={project} />))}
             </motion.div>
           </AnimatePresence>

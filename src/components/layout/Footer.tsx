@@ -1,5 +1,7 @@
 import { NavLink } from "react-router-dom";
 
+// We store our links in an array. This is a common React pattern!
+// It allows us to use `.map()` later to generate HTML for each link without repeating code.
 const FOOTER_LINKS = [
   { label: "Home",     path: "/" },
   { label: "About",    path: "/about" },
@@ -9,6 +11,7 @@ const FOOTER_LINKS = [
   { label: "Contact",  path: "/contact" },
 ];
 
+// Same here for our social media links. The `icon` property holds the actual SVG HTML code.
 const SOCIAL_LINKS = [
   {
     id:    "footer-github",
@@ -32,8 +35,10 @@ const SOCIAL_LINKS = [
   },
 ];
 
-
+// This is a functional React component called Footer.
 const Footer = () => {
+  // We use JavaScript's Date object to automatically get the current year.
+  // This way, your copyright notice is never out of date!
   const year = new Date().getFullYear();
 
   return (
@@ -43,7 +48,7 @@ const Footer = () => {
         background:   "var(--color-footer-bg)",
         borderTop:    "1px solid var(--color-border)",
         padding:      "3rem 0 1.5rem",
-        marginTop:    "auto",
+        marginTop:    "auto", // Pushes the footer to the bottom of the page
         transition:   "background 0.35s ease, border-color 0.35s ease",
       }}
     >
@@ -59,7 +64,7 @@ const Footer = () => {
             marginBottom:    "2.5rem",
           }}
         >
-          {/* Brand block */}
+          {/* Brand block - The logo and small bio */}
           <div style={{ maxWidth: 280 }}>
             <div
               style={{
@@ -110,7 +115,7 @@ const Footer = () => {
             </p>
           </div>
 
-          {/* Nav links */}
+          {/* Nav links block */}
           <nav id="footer-nav" aria-label="Footer navigation">
             <p
               style={{
@@ -126,6 +131,8 @@ const Footer = () => {
               Pages
             </p>
             <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: "0.5rem" }}>
+              {/* Here we use .map() to loop over our FOOTER_LINKS array.
+                  For every link in the array, React creates an <li> and <NavLink>! */}
               {FOOTER_LINKS.map((link) => (
                 <li key={link.path}>
                   <NavLink
@@ -138,6 +145,7 @@ const Footer = () => {
                       textDecoration: "none",
                       transition:     "color 0.2s",
                     })}
+                    // We use inline JavaScript to change the color when the mouse enters or leaves
                     onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "var(--color-heading)"; }}
                     onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "var(--color-body)"; }}
                   >
@@ -148,7 +156,7 @@ const Footer = () => {
             </ul>
           </nav>
 
-          {/* Social links */}
+          {/* Social links block */}
           <div>
             <p
               style={{
@@ -164,6 +172,7 @@ const Footer = () => {
               Connect
             </p>
             <div style={{ display: "flex", gap: "0.75rem" }}>
+              {/* Similar to the links, we map over our SOCIAL_LINKS array */}
               {SOCIAL_LINKS.map((s) => (
                 <a
                   key={s.id}
@@ -207,7 +216,7 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Divider */}
+        {/* Divider line above the bottom bar */}
         <div
           style={{
             height:     1,
@@ -216,7 +225,7 @@ const Footer = () => {
           }}
         />
 
-        {/* Bottom bar */}
+        {/* Bottom bar with Copyright */}
         <div
           style={{
             display:         "flex",

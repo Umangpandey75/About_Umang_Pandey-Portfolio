@@ -1,6 +1,6 @@
-export { default as Home }     from "./Home";
-export { default as About }    from "./About";
-export { default as Skills }   from "./Skills";
-export { default as Projects } from "./Projects";
-export { default as Journey }  from "./Journey";
-export { default as Contact }  from "./Contact";
+export { default as Home }     from "./Home/Home";
+export { default as About }    from "./About/About";
+export { default as Skills }   from "./Skills/Skills";
+export { default as Projects } from "./Projects/Projects";
+export { default as Journey }  from "./Journey/Journey";
+export { default as Contact }  from "./Contact/Contact";

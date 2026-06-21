@@ -2,8 +2,11 @@ import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 
-/* ── Typewriter hook ──────────────────── */
+/* ── Typewriter hook ──────────────────── 
+   A custom React Hook that types out an array of words letter by letter, deletes them, and moves to the next word.
+*/
 const useTypewriter = (words: string[], speed = 75, pause = 2000) => {
+  // `display` holds the current string being shown on the screen
   const [display, setDisplay] = useState("");
   const [wordIdx, setWordIdx] = useState(0);
   const [typing, setTyping] = useState(true);
@@ -30,12 +33,17 @@ const useTypewriter = (words: string[], speed = 75, pause = 2000) => {
   return display;
 };
 
-/* ── Neural-network particle canvas ──── */
+/* ── Neural-network particle canvas ──── 
+   This uses the HTML5 Canvas element to draw moving dots and connect them with lines if they get close.
+*/
 const ParticleCanvas = () => {
+  // We use a ref to connect to the actual <canvas> element in the HTML
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
+    // Get the 2D drawing context
     const ctx = canvas.getContext("2d")!;
     let animId: number;
     const resize = () => { canvas.width = window.innerWidth; canvas.height = window.innerHeight; };
@@ -209,9 +217,12 @@ const Home = () => {
   }, []);
 
   return (
+    // The `<main>` tag holds the core content of the page
     <main className="page-content" id="page-home" style={{ overflow: "hidden" }}>
 
-      {/* ── Background orbs ── */}
+      {/* ── Background orbs ── 
+          These divs have massive blur filters applied to them to look like glowing lights.
+      */}
       <div style={{ position: "absolute", inset: 0, pointerEvents: "none", zIndex: 0, overflow: "hidden" }}>
         <div style={{
           position: "absolute", top: "8%", left: "2%",
@@ -232,7 +243,9 @@ const Home = () => {
       </div>
       <ParticleCanvas />
 
-      {/* ── Hero ── */}
+      {/* ── Hero ── 
+          The Hero section is the very first thing the user sees at the top of the website.
+      */}
       <section className="hero-section" style={{
         display: "flex", alignItems: "center", justifyContent: "center",
         position: "relative", zIndex: 1,
@@ -240,6 +253,7 @@ const Home = () => {
         <div className="hero-flex-container" style={{ maxWidth: 1200, width: "100%" }}>
           {/* Left text block */}
           <div className="hero-text-block" style={{ maxWidth: 620 }}>
+            {/* Framer Motion lets us animate elements as they appear using `initial` and `animate` */}
             <motion.div
               initial={{ opacity: 0, y: -16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}
               style={{
@@ -374,7 +388,9 @@ const Home = () => {
             Featured <span className="saffron-text-gradient">Projects</span>
           </motion.h2>
           <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
+            {/* We map over our FEATURED projects array to generate a card for each one */}
             {FEATURED.map((p, i) => (
+              // `whileInView` makes the animation trigger only when you scroll down to see it!
               <motion.a key={p.name} href={p.url} target="_blank" rel="noopener noreferrer"
                 initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}
                 whileHover={{ x: 12, scale: 1.01 }}
