@@ -2,36 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 
-/* ── Typewriter hook ──────────────────── 
-   A custom React Hook that types out an array of words letter by letter, deletes them, and moves to the next word.
-*/
-const useTypewriter = (words: string[], speed = 75, pause = 2000) => {
-  // `display` holds the current string being shown on the screen
-  const [display, setDisplay] = useState("");
-  const [wordIdx, setWordIdx] = useState(0);
-  const [typing, setTyping] = useState(true);
-  useEffect(() => {
-    const word = words[wordIdx];
-    if (typing) {
-      if (display.length < word.length) {
-        const t = setTimeout(() => setDisplay(word.slice(0, display.length + 1)), speed);
-        return () => clearTimeout(t);
-      } else {
-        const t = setTimeout(() => setTyping(false), pause);
-        return () => clearTimeout(t);
-      }
-    } else {
-      if (display.length > 0) {
-        const t = setTimeout(() => setDisplay(display.slice(0, -1)), speed / 2);
-        return () => clearTimeout(t);
-      } else {
-        setWordIdx((i) => (i + 1) % words.length);
-        setTyping(true);
-      }
-    }
-  }, [display, typing, wordIdx, words, speed, pause]);
-  return display;
-};
+
 
 /* ── Neural-network particle canvas ──── 
    This uses the HTML5 Canvas element to draw moving dots and connect them with lines if they get close.
@@ -156,7 +127,7 @@ const STATS = [
   { value: "2026",   label: "Graduating" },
 ];
 
-const ROLES = ["Data Analyst", "Python Developer", "Power BI Builder", "SQL Server Specialist"];
+
 
 /* ── Featured project strip ──────────── */
 const FEATURED = [
@@ -197,7 +168,6 @@ const MANIFESTO = [
 
 /* ── Main ─────────────────────────────── */
 const Home = () => {
-  const role = useTypewriter(ROLES, 75, 1800);
   const [mouse, setMouse] = useState({ x: 0, y: 0 });
   const graduation = useRef(new Date("2026-06-30T00:00:00+05:30")).current;
   const cd = useCountdown(graduation);
@@ -269,21 +239,20 @@ const Home = () => {
             </motion.div>
 
             <motion.h1 initial={{ opacity: 0, y: 32 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1, duration: 0.8 }}
-              style={{ fontFamily: "var(--font-heading)", fontWeight: 900, fontSize: "clamp(1.9rem, 6.5vw, 5.5rem)", color: "var(--color-heading)", lineHeight: 1.0, marginBottom: "0.2rem" }}>
-              Hi, I'm
-            </motion.h1>
-            <motion.h1 initial={{ opacity: 0, y: 32 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.18, duration: 0.8 }}
               style={{ fontFamily: "var(--font-heading)", fontWeight: 900, fontSize: "clamp(1.9rem, 6.5vw, 5.5rem)", lineHeight: 1.0, marginBottom: "1.75rem",
                 background: "var(--grad-name)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
               Umang Pandey
             </motion.h1>
 
-            <motion.div className="hero-typewriter-container" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.4 }}
+            <motion.div className="hero-roles-container" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.4 }}
               style={{ fontFamily: "var(--font-body)", fontSize: "clamp(1rem, 2.4vw, 1.3rem)", color: "var(--color-body)", marginBottom: "1.4rem",
-                minHeight: "2.2em", display: "flex", alignItems: "center", gap: "0.5rem" }}>
+                display: "flex", flexWrap: "wrap", alignItems: "center", gap: "0.8rem" }}>
               <span style={{ color: "var(--color-accent-gold)", fontWeight: 700, fontSize: "1.2em", fontFamily: "var(--font-heading)" }}>›</span>
-              <span>{role}</span>
-              <span style={{ width: 2, height: "1.1em", background: "var(--color-accent-violet)", display: "inline-block", flexShrink: 0, animation: "glowPulse 1.1s ease-in-out infinite" }} />
+              <span>Data Analyst</span>
+              <span style={{ color: "var(--color-accent-violet)", fontWeight: 700 }}>•</span>
+              <span>Python Developer</span>
+              <span style={{ color: "var(--color-accent-violet)", fontWeight: 700 }}>•</span>
+              <span>Power BI Developer</span>
             </motion.div>
 
             <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5, duration: 0.7 }}
