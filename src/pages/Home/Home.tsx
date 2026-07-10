@@ -122,7 +122,7 @@ const TermLine = ({ text, delay, color = "#00FF41" }: { text: string; delay: num
 /* ── Stats ──────────────────────────── */
 const STATS = [
   { value: "B.Tech", label: "CSE Degree" },
-  { value: "10+",    label: "Projects" },
+  { value: "50+",    label: "Projects" },
   { value: "2+",     label: "Tata Trainee Roles" },
   { value: "2026",   label: "Graduating" },
 ];
