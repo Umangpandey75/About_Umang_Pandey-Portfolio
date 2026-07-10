@@ -161,7 +161,8 @@ const BENTO = [
 /* ── Manifesto lines ─────────────────── */
 const MANIFESTO = [
   { text: "Code is the closest thing to magic",     size: "clamp(2rem, 5vw, 4rem)",   gold: false },
-  { text: "that humans have ever invented.",          size: "clamp(2rem, 5vw, 4rem)",   gold: false },
+  { text: "that humans have ever created—",         size: "clamp(2rem, 5vw, 4rem)",   gold: false },
+  { text: "turning ideas into reality, one line at a time.", size: "clamp(2rem, 5vw, 4rem)", gold: false },
   { text: "Real things. Shipped.",                   size: "clamp(2.5rem, 6vw, 5.5rem)", gold: true },
   { text: "Not just in a README.",                   size: "clamp(1.6rem, 3.5vw, 3rem)", gold: false },
 ];
