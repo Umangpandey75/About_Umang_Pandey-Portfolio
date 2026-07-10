@@ -146,7 +146,7 @@ const Projects = () => {
         <div className="section-wrapper">
           <motion.p initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
             style={{ fontFamily: "var(--font-body)", fontSize: "0.78rem", color: "var(--color-accent-gold)", textTransform: "uppercase", letterSpacing: "0.16em", fontWeight: 600, marginBottom: "0.5rem" }}>
-            Across all 10 projects
+            Across all 50 projects
           </motion.p>
           <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}
             style={{ fontFamily: "var(--font-heading)", fontWeight: 900, fontSize: "clamp(1.8rem, 4vw, 3rem)", color: "var(--color-heading)", marginBottom: "3rem" }}>
@@ -154,14 +154,14 @@ const Projects = () => {
           </motion.h2>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(180px, 1fr))", gap: "1rem" }}>
             {[
-              { n: "10",    label: "Total Projects",      sub: "Dashboards, Web Apps, ML Models",  icon: "🚀", color: "#6B48FF" },
-              { n: "180+",  label: "Git Commits",         sub: "Across all active repos",          icon: "📝", color: "#E8A045" },
-              { n: "3",     label: "DBs & APIs Used",     sub: "SQL Server, MySQL, SQLite",        icon: "🔌", color: "#00CEA8" },
-              { n: "1",     label: "Relational DB",       sub: "For bug tracking & logs",          icon: "☁️", color: "#22C55E" },
-              { n: "~8k+",  label: "Lines of Code",       sub: "Hand-crafted data scripts & UI",   icon: "⌨️", color: "#F472B6" },
+              { n: "50",    label: "Total Projects",      sub: "Dashboards, Web Apps, ML Models",  icon: "🚀", color: "#6B48FF" },
+              { n: "680+",  label: "Git Commits",         sub: "Across all active repos",          icon: "📝", color: "#E8A045" },
+              { n: "13",    label: "DBs & APIs Used",     sub: "SQL Server, MySQL, SQLite",        icon: "🔌", color: "#00CEA8" },
+              { n: "8",     label: "Relational DB",       sub: "For bug tracking & logs",          icon: "☁️", color: "#22C55E" },
+              { n: "~22k+", label: "Lines of Code",       sub: "Hand-crafted data scripts & UI",   icon: "⌨️", color: "#F472B6" },
               { n: "2",     label: "Tata Internships",    sub: "Data Visualisation & Analytics",   icon: "🏆", color: "#E8A045" },
               { n: "100%",  label: "Shipped",             sub: "All verified and functional",      icon: "✅", color: "#22C55E" },
-              { n: "2",     label: "Tech Platforms",      sub: "React & Streamlit frameworks",     icon: "⚛️", color: "#61DAFB" },
+              { n: "4",     label: "Tech Platforms",      sub: "React & Streamlit frameworks",     icon: "⚛️", color: "#61DAFB" },
             ].map((stat, i) => (
               <motion.div key={stat.label} initial={{ opacity: 0, y: 24, scale: 0.95 }} whileInView={{ opacity: 1, y: 0, scale: 1 }}
                 viewport={{ once: true }} transition={{ delay: i * 0.07 }}
