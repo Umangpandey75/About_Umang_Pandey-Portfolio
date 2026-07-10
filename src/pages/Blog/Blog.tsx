@@ -7,17 +7,16 @@ const TOPICS = [
   { icon: "🤖", title: "Machine Learning", desc: "Predictive models, real-world implementations, and AI applications.", color: "var(--color-accent-violet-light)" },
   { icon: "📈", title: "Data Analytics", desc: "Business insights, KPIs, dashboards, and data storytelling.", color: "var(--color-accent-gold)" },
   { icon: "💼", title: "Career & Interview Tips", desc: "Resume reviews, project ideas, certifications, and job preparation.", color: "var(--color-accent-violet-light)" },
+  { icon: "📂", title: "Portfolio & Career", desc: "Resume tips, GitHub optimization, portfolio building, freelancing, interview preparation, and career growth.", color: "var(--color-accent-gold)" },
 ];
 
 const ARTICLES = [
-  { icon: "🚀", title: "Building an HR Analytics Dashboard in Power BI", tag: "Power BI" },
-  { icon: "❤️", title: "Heart Disease Prediction using Machine Learning", tag: "Machine Learning" },
-  { icon: "📊", title: "SQL Queries Every Data Analyst Should Know", tag: "SQL" },
-  { icon: "🐍", title: "Python Libraries Every Data Analyst Must Learn", tag: "Python" },
-  { icon: "🤖", title: "Machine Learning Roadmap for Beginners (2026)", tag: "Career" },
-  { icon: "📈", title: "How I Built My Portfolio from Scratch", tag: "Web Dev" },
-  { icon: "💼", title: "Data Analyst Interview Questions & Answers", tag: "Career" },
-  { icon: "⚡", title: "Power BI Dashboard Design Best Practices", tag: "Power BI" },
+  { icon: "🚀", title: "Building an HR Analytics Dashboard in Power BI – Step by Step", tag: "Power BI", status: "Publishing Soon", time: "8 min read", level: "Intermediate" },
+  { icon: "❤️", title: "Heart Disease Prediction Using Machine Learning & Python", tag: "Machine Learning", status: "Draft", time: "10 min read", level: "Advanced" },
+  { icon: "🐍", title: "Top 15 Python Libraries Every Data Analyst Should Master", tag: "Python", status: "In Progress", time: "6 min read", level: "Beginner" },
+  { icon: "🗄️", title: "50 SQL Queries Every Data Analyst Should Know", tag: "SQL", status: "Draft", time: "12 min read", level: "Intermediate" },
+  { icon: "📊", title: "Data Visualization Best Practices with Power BI", tag: "Data Viz", status: "Publishing Soon", time: "5 min read", level: "Beginner" },
+  { icon: "🤖", title: "Machine Learning Roadmap for Beginners (2026)", tag: "Career", status: "In Progress", time: "7 min read", level: "Beginner" },
 ];
 
 const Blog = () => {
@@ -48,15 +47,15 @@ const Blog = () => {
             style={{
               fontFamily: "var(--font-heading)",
               fontWeight: 900,
-              fontSize: "clamp(2.5rem, 6vw, 4.5rem)",
+              fontSize: "clamp(2rem, 5vw, 3.8rem)",
               color: "var(--color-heading)",
               lineHeight: 1.1,
               marginBottom: "1.5rem",
-              maxWidth: "800px",
+              maxWidth: "1000px",
               marginInline: "auto",
             }}
           >
-            Sharing Knowledge Through <span className="saffron-text-gradient">Data</span>
+            Exploring Data. Building Solutions. <span className="saffron-text-gradient">Sharing Knowledge.</span>
           </motion.h1>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -71,11 +70,8 @@ const Blog = () => {
               lineHeight: 1.7,
             }}
           >
-            <p style={{ marginBottom: "1rem" }}>
-              I write about Data Analytics, Power BI, Python, SQL, Machine Learning, and AI—sharing practical tutorials, project breakdowns, industry insights, and lessons from real-world development.
-            </p>
             <p>
-              <strong>Coming Soon:</strong> In-depth guides, case studies, and technical articles designed to help developers and aspiring data professionals learn and grow.
+              I share practical tutorials, project breakdowns, Power BI dashboards, Python automation, SQL techniques, Machine Learning implementations, and lessons learned while building real-world data solutions.
             </p>
           </motion.div>
         </div>
@@ -159,7 +155,7 @@ const Blog = () => {
                   gap: "1rem"
                 }}
               >
-                {/* Coming Soon Badge */}
+                {/* Status Badge */}
                 <div style={{
                   position: "absolute",
                   top: "1.5rem",
@@ -175,7 +171,7 @@ const Blog = () => {
                   textTransform: "uppercase",
                   letterSpacing: "0.05em"
                 }}>
-                  Coming Soon
+                  {article.status}
                 </div>
 
                 <div style={{ fontSize: "2rem", marginBottom: "0.5rem" }}>{article.icon}</div>
@@ -189,20 +185,36 @@ const Blog = () => {
                 }}>
                   {article.title}
                 </h3>
-                <div style={{ marginTop: "auto", paddingTop: "1rem" }}>
-                  <span style={{
-                    display: "inline-block",
-                    background: "var(--color-bg)",
-                    border: "1px solid var(--color-border)",
-                    padding: "0.3rem 0.8rem",
-                    borderRadius: "6px",
-                    fontSize: "0.8rem",
-                    color: "var(--color-body-muted)",
-                    fontFamily: "var(--font-body)",
-                    fontWeight: 500
-                  }}>
-                    {article.tag}
-                  </span>
+                
+                {/* Metadata */}
+                <div style={{ marginTop: "auto", paddingTop: "1rem", display: "flex", flexDirection: "column", gap: "0.8rem" }}>
+                  <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem", fontSize: "0.85rem", color: "var(--color-body-muted)", fontFamily: "var(--font-body)" }}>
+                    <span style={{ display: "flex", alignItems: "center", gap: "0.4rem" }}>
+                      📅 July 2026
+                    </span>
+                    <span style={{ display: "flex", alignItems: "center", gap: "0.4rem" }}>
+                      ⏱ {article.time}
+                    </span>
+                    <span style={{ display: "flex", alignItems: "center", gap: "0.4rem" }}>
+                      🎓 {article.level}
+                    </span>
+                  </div>
+                  
+                  <div>
+                    <span style={{
+                      display: "inline-block",
+                      background: "var(--color-bg)",
+                      border: "1px solid var(--color-border)",
+                      padding: "0.3rem 0.8rem",
+                      borderRadius: "6px",
+                      fontSize: "0.8rem",
+                      color: "var(--color-body)",
+                      fontFamily: "var(--font-body)",
+                      fontWeight: 500
+                    }}>
+                      🏷️ {article.tag}
+                    </span>
+                  </div>
                 </div>
               </motion.div>
             ))}
@@ -210,7 +222,7 @@ const Blog = () => {
         </div>
       </section>
 
-      {/* ── CTA Section ── */}
+      {/* ── CTA / Newsletter Section ── */}
       <section style={{ padding: "2rem 0 6rem", textAlign: "center" }}>
         <div className="section-wrapper">
           <motion.div
@@ -227,10 +239,34 @@ const Blog = () => {
             }}
           >
             <h2 style={{ fontFamily: "var(--font-heading)", fontSize: "2rem", color: "var(--color-heading)", marginBottom: "1rem" }}>
-              Stay Tuned
+              Stay Updated
             </h2>
-            <p style={{ fontFamily: "var(--font-body)", fontSize: "1.1rem", color: "var(--color-body-muted)", lineHeight: 1.6, maxWidth: "600px", margin: "0 auto" }}>
-              New articles are coming soon. Stay tuned for practical tutorials, project walkthroughs, and insights from my journey in Data Analytics and Python Development.
+            <p style={{ fontFamily: "var(--font-body)", fontSize: "1.1rem", color: "var(--color-body-muted)", lineHeight: 1.6, maxWidth: "600px", margin: "0 auto 2rem" }}>
+              Get notified when I publish new tutorials on Data Analytics, Python, SQL, Power BI, and Machine Learning.
+            </p>
+            
+            <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem", justifyContent: "center", marginBottom: "2rem" }}>
+              <input 
+                type="email" 
+                placeholder="Enter your email" 
+                style={{
+                  padding: "0.8rem 1.2rem",
+                  borderRadius: "8px",
+                  border: "1px solid var(--color-border)",
+                  background: "var(--color-bg)",
+                  color: "var(--color-heading)",
+                  fontFamily: "var(--font-body)",
+                  minWidth: "250px",
+                  outline: "none"
+                }}
+              />
+              <button className="btn-primary" style={{ padding: "0.8rem 2rem", border: "none", cursor: "pointer" }}>
+                Subscribe
+              </button>
+            </div>
+
+            <p style={{ fontFamily: "var(--font-body)", fontSize: "0.95rem", color: "var(--color-body-faint)" }}>
+              Follow me on <a href="https://github.com/Umangpandey75" target="_blank" rel="noopener noreferrer" style={{ color: "var(--color-accent-gold)", textDecoration: "none" }}>GitHub</a> and <a href="https://linkedin.com/in/umang-pandey-01b486273" target="_blank" rel="noopener noreferrer" style={{ color: "var(--color-accent-violet-light)", textDecoration: "none" }}>LinkedIn</a> for the latest projects and articles.
             </p>
           </motion.div>
         </div>
