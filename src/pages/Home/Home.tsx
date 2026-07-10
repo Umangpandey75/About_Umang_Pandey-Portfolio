@@ -354,7 +354,7 @@ const Home = () => {
           </motion.p>
           <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}
             style={{ fontFamily: "var(--font-heading)", fontWeight: 900, fontSize: "clamp(1.8rem, 4vw, 3rem)", color: "var(--color-heading)", marginBottom: "2rem" }}>
-            Driving Decisions with <span className="violet-text-gradient">Data</span>
+            Transforming Data into Meaningful <span className="violet-text-gradient">Business Intelligence</span>
           </motion.h2>
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }}
             style={{
@@ -365,19 +365,59 @@ const Home = () => {
               maxWidth: "850px",
             }}>
             <p style={{ marginBottom: "1.2rem" }}>
-              Welcome to the official portfolio of <strong>Umang Pandey</strong>. As a dedicated <strong>Data Analyst</strong> and <strong>Python Developer</strong> based in India, I specialize in transforming complex, large-scale datasets into strategic, actionable business insights. My technical journey began with a deep curiosity for numbers and patterns, which quickly evolved into a focused career path dedicated to leveraging data for high-level decision-making. Throughout this comprehensive <strong>portfolio</strong>, you will explore my proven expertise across various critical domains of modern data science.
+              Welcome to my portfolio! I'm <strong>Umang Pandey</strong>, a passionate <strong>Data Analyst</strong>, <strong>Python Developer</strong>, and Business Intelligence Enthusiast from India. I specialize in transforming raw, complex datasets into actionable insights that empower organizations to make smarter, data-driven decisions.
             </p>
-            <p style={{ marginBottom: "1.2rem" }}>
-              As an experienced <strong>Dashboard Developer</strong>, I design, architect, and build interactive, real-time <strong>Data Visualization</strong> solutions using <strong>Power BI</strong>. These visual tools empower organizations to track performance, monitor KPIs, and understand their metrics with absolute clarity. My technical foundation relies heavily on robust <strong>SQL</strong> capabilities for advanced relational database management, complex querying, and schema design, ensuring that all data is structured, accurate, and instantly accessible.
+            <p style={{ marginBottom: "2.5rem" }}>
+              With a strong foundation in Data Analytics, <strong>SQL</strong>, Python, <strong>Power BI</strong>, and <strong>Machine Learning</strong>, I enjoy solving real-world business challenges by combining analytical thinking with modern technology. My focus is not just on analyzing data but on creating intelligent solutions that improve efficiency, automate workflows, and deliver measurable business value.
             </p>
-            <p style={{ marginBottom: "1.2rem" }}>
-              Furthermore, my capabilities as a Python Developer allow me to script automated ETL pipelines, meticulously clean raw data, and deploy sophisticated <strong>Machine Learning</strong> models. By implementing machine learning algorithms, I can predict market trends, automate repetitive analytical tasks, and uncover hidden correlations within structured datasets.
-            </p>
-            <p style={{ marginBottom: "1.2rem" }}>
-              Every single project and case study showcased in this portfolio reflects my unwavering commitment to writing clean, optimized code and constructing impactful data architectures. Whether it's a deep-dive data visualization challenge, a Power BI dashboard deployment, or a complex machine learning integration, my primary goal is always to bridge the critical gap between raw data and tangible, real-world solutions.
-            </p>
+
+            <h3 style={{ fontFamily: "var(--font-heading)", fontSize: "1.5rem", color: "var(--color-heading)", marginBottom: "1.5rem" }}>What I Do</h3>
+            
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "2rem", marginBottom: "3rem" }}>
+              <div style={{ background: "rgba(255,255,255,0.02)", padding: "1.5rem", borderRadius: "12px", border: "1px solid rgba(255,255,255,0.05)" }}>
+                <h4 style={{ color: "var(--color-accent-gold)", fontWeight: 700, marginBottom: "0.8rem", fontSize: "1.1rem" }}>📊 Data Analytics & Visualization</h4>
+                <ul style={{ listStyleType: "disc", paddingLeft: "1.2rem", color: "var(--color-body-muted)", display: "flex", flexDirection: "column", gap: "0.5rem" }}>
+                  <li>Build interactive Power BI dashboards</li>
+                  <li>Design KPI-driven reports and executive dashboards</li>
+                  <li>Transform raw data into meaningful visual insights</li>
+                  <li>Analyze business performance and trends</li>
+                </ul>
+              </div>
+              
+              <div style={{ background: "rgba(255,255,255,0.02)", padding: "1.5rem", borderRadius: "12px", border: "1px solid rgba(255,255,255,0.05)" }}>
+                <h4 style={{ color: "var(--color-accent-violet-light)", fontWeight: 700, marginBottom: "0.8rem", fontSize: "1.1rem" }}>🗄️ SQL & Database Management</h4>
+                <ul style={{ listStyleType: "disc", paddingLeft: "1.2rem", color: "var(--color-body-muted)", display: "flex", flexDirection: "column", gap: "0.5rem" }}>
+                  <li>Write optimized SQL queries</li>
+                  <li>Design relational database schemas</li>
+                  <li>Perform data extraction, transformation, and validation</li>
+                  <li>Improve data quality and reporting accuracy</li>
+                </ul>
+              </div>
+
+              <div style={{ background: "rgba(255,255,255,0.02)", padding: "1.5rem", borderRadius: "12px", border: "1px solid rgba(255,255,255,0.05)" }}>
+                <h4 style={{ color: "var(--color-accent-gold)", fontWeight: 700, marginBottom: "0.8rem", fontSize: "1.1rem" }}>🐍 Python Development</h4>
+                <ul style={{ listStyleType: "disc", paddingLeft: "1.2rem", color: "var(--color-body-muted)", display: "flex", flexDirection: "column", gap: "0.5rem" }}>
+                  <li>Develop automated ETL pipelines</li>
+                  <li>Perform data cleaning and preprocessing</li>
+                  <li>Build data analysis and reporting tools</li>
+                  <li>Automate repetitive business processes</li>
+                </ul>
+              </div>
+
+              <div style={{ background: "rgba(255,255,255,0.02)", padding: "1.5rem", borderRadius: "12px", border: "1px solid rgba(255,255,255,0.05)" }}>
+                <h4 style={{ color: "var(--color-accent-violet-light)", fontWeight: 700, marginBottom: "0.8rem", fontSize: "1.1rem" }}>🤖 Machine Learning & AI</h4>
+                <ul style={{ listStyleType: "disc", paddingLeft: "1.2rem", color: "var(--color-body-muted)", display: "flex", flexDirection: "column", gap: "0.5rem" }}>
+                  <li>Develop predictive analytics models</li>
+                  <li>Build classification and regression systems</li>
+                  <li>Implement data-driven decision-support solutions</li>
+                  <li>Integrate AI-powered features into analytical applications</li>
+                </ul>
+              </div>
+            </div>
+
+            <h3 style={{ fontFamily: "var(--font-heading)", fontSize: "1.5rem", color: "var(--color-heading)", marginBottom: "1rem" }}>My Approach</h3>
             <p>
-              I actively invite you to explore my <strong>GitHub</strong> profile to review the actual source code behind these innovations. On my GitHub, I continuously document my professional development, share open-source contributions, and experiment with new analytical frameworks. Thank you for taking the time to visit the official Umang Pandey portfolio. I am constantly open to new professional opportunities, collaborative tech projects, and engaging discussions revolving around data analytics, predictive modeling, and software engineering. Let's connect and build data-driven solutions for the future.
+              I believe that data becomes valuable only when it leads to informed decisions. Every project I build focuses on delivering clear insights, scalable architecture, clean code, and an intuitive user experience. Whether it's an interactive dashboard, an analytical report, or an AI-powered application, I strive to create solutions that bridge the gap between data and business strategy.
             </p>
           </motion.div>
         </div>
