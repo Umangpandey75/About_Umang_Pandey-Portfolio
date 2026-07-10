@@ -240,9 +240,6 @@ const Footer = () => {
           <p style={{ fontFamily: "var(--font-body)", fontSize: "0.78rem", color: "var(--color-body-faint)" }}>
             &copy; {year} Umang Pandey &mdash; All rights reserved.
           </p>
-          <p style={{ fontFamily: "var(--font-body)", fontSize: "0.78rem", color: "var(--color-body-faint)" }}>
-            Made by vive coding
-          </p>
         </div>
       </div>
     </footer>
