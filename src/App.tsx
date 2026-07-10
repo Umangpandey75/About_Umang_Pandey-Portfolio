@@ -18,6 +18,8 @@ const Skills   = lazy(() => import("./pages/Skills/Skills"));
 const Projects = lazy(() => import("./pages/Projects/Projects"));
 const Journey  = lazy(() => import("./pages/Journey/Journey"));
 const Contact  = lazy(() => import("./pages/Contact/Contact"));
+const Blog     = lazy(() => import("./pages/Blog/Blog"));
+const Resume   = lazy(() => import("./pages/Resume/Resume"));
 
 // ── Scroll to top on every route change ─────────────────────────────────────
 // A small helper component that listens for URL changes (pathname)
@@ -87,6 +89,8 @@ const App = () => (
           <Route path="/projects" element={<Projects />} />
           <Route path="/journey"  element={<Journey />} />
           <Route path="/contact"  element={<Contact />} />
+          <Route path="/blog"     element={<Blog />} />
+          <Route path="/resume"   element={<Resume />} />
           {/* 404 fallback — The "*" catches any URL that doesn't match the above, redirecting to Home */}
           <Route path="*" element={<Home />} />
         </Routes>

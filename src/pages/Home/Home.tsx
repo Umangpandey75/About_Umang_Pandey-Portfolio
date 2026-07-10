@@ -345,6 +345,44 @@ const Home = () => {
         </div>
       </motion.section>
 
+      {/* ── SEO Rich About Section ── */}
+      <section style={{ position: "relative", zIndex: 1, padding: "5rem 0 2rem", borderBottom: "1px solid var(--color-border)" }}>
+        <div className="section-wrapper">
+          <motion.p initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+            style={{ fontFamily: "var(--font-body)", fontSize: "0.78rem", color: "var(--color-accent-gold)", textTransform: "uppercase", letterSpacing: "0.16em", fontWeight: 600, marginBottom: "0.5rem" }}>
+            About Umang Pandey
+          </motion.p>
+          <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}
+            style={{ fontFamily: "var(--font-heading)", fontWeight: 900, fontSize: "clamp(1.8rem, 4vw, 3rem)", color: "var(--color-heading)", marginBottom: "2rem" }}>
+            Driving Decisions with <span className="violet-text-gradient">Data</span>
+          </motion.h2>
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }}
+            style={{
+              fontFamily: "var(--font-body)",
+              fontSize: "1rem",
+              color: "var(--color-body-muted)",
+              lineHeight: 1.9,
+              maxWidth: "850px",
+            }}>
+            <p style={{ marginBottom: "1.2rem" }}>
+              Welcome to the official portfolio of <strong>Umang Pandey</strong>. As a dedicated <strong>Data Analyst</strong> and <strong>Python Developer</strong> based in India, I specialize in transforming complex, large-scale datasets into strategic, actionable business insights. My technical journey began with a deep curiosity for numbers and patterns, which quickly evolved into a focused career path dedicated to leveraging data for high-level decision-making. Throughout this comprehensive <strong>portfolio</strong>, you will explore my proven expertise across various critical domains of modern data science.
+            </p>
+            <p style={{ marginBottom: "1.2rem" }}>
+              As an experienced <strong>Dashboard Developer</strong>, I design, architect, and build interactive, real-time <strong>Data Visualization</strong> solutions using <strong>Power BI</strong>. These visual tools empower organizations to track performance, monitor KPIs, and understand their metrics with absolute clarity. My technical foundation relies heavily on robust <strong>SQL</strong> capabilities for advanced relational database management, complex querying, and schema design, ensuring that all data is structured, accurate, and instantly accessible.
+            </p>
+            <p style={{ marginBottom: "1.2rem" }}>
+              Furthermore, my capabilities as a Python Developer allow me to script automated ETL pipelines, meticulously clean raw data, and deploy sophisticated <strong>Machine Learning</strong> models. By implementing machine learning algorithms, I can predict market trends, automate repetitive analytical tasks, and uncover hidden correlations within structured datasets.
+            </p>
+            <p style={{ marginBottom: "1.2rem" }}>
+              Every single project and case study showcased in this portfolio reflects my unwavering commitment to writing clean, optimized code and constructing impactful data architectures. Whether it's a deep-dive data visualization challenge, a Power BI dashboard deployment, or a complex machine learning integration, my primary goal is always to bridge the critical gap between raw data and tangible, real-world solutions.
+            </p>
+            <p>
+              I actively invite you to explore my <strong>GitHub</strong> profile to review the actual source code behind these innovations. On my GitHub, I continuously document my professional development, share open-source contributions, and experiment with new analytical frameworks. Thank you for taking the time to visit the official Umang Pandey portfolio. I am constantly open to new professional opportunities, collaborative tech projects, and engaging discussions revolving around data analytics, predictive modeling, and software engineering. Let's connect and build data-driven solutions for the future.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
       {/* ── Featured Projects strip ── */}
       <section style={{ position: "relative", zIndex: 1, padding: "5rem 0" }}>
         <div className="section-wrapper">
