@@ -79,7 +79,7 @@ export const journeyItems: JourneyItem[] = [
     date:    "August 2022",
     sortKey: "2022-08",
     title:   "B.Tech CSE Begun",
-    body:    "NITRA Technical Campus, Ghaziabad. Pursuing Bachelor of Technology in Computer Science and Engineering.",
+    body:    "NITRA Technical Campus, Noida. Pursuing Bachelor of Technology in Computer Science and Engineering.",
     type:    "education",
   },
   {

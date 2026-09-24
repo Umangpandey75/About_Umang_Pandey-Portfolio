@@ -242,7 +242,7 @@ const ResumeSection = () => {
               {[
                 { icon: "✉️", text: "umangpandey.co@gmail.com", url: "mailto:umangpandey.co@gmail.com" },
                 { icon: "📞", text: "+91 7518593228", url: "tel:+917518593228" },
-                { icon: "📍", text: "Ghaziabad, UP, India" },
+                { icon: "📍", text: "Noida, India" },
                 { icon: "🔗", text: "linkedin.com/in/umang-pandey-01b486273", url: "https://linkedin.com/in/umang-pandey-01b486273" },
                 { icon: "💻", text: "github.com/Umangpandey75", url: "https://github.com/Umangpandey75" },
               ].map((item, idx) => (
@@ -358,7 +358,7 @@ const ResumeSection = () => {
                   </span>
                 </div>
                 <p style={{ fontFamily: "var(--font-body)", fontSize: "0.82rem", color: "var(--color-accent-gold)", fontWeight: 600, marginBottom: "0.5rem" }}>
-                  NITRA Technical Campus, Ghaziabad
+                  NITRA Technical Campus, Noida
                 </p>
                 <p style={{ fontFamily: "var(--font-body)", fontSize: "0.8rem", color: "var(--color-body-muted)", lineHeight: 1.6 }}>
                   Gaining deep foundations in relational database design, Python software architectures, object-oriented concepts, statistical analyses, and data structures.

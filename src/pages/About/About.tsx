@@ -1,5 +1,5 @@
-import { useRef, useEffect } from "react";
-import { motion } from "framer-motion";
+import { useRef, useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 /* ── Personality Radar SVG ──────────────────────────────────────────────────── 
    This builds the cool spider-web "radar" chart using plain SVG and math!
@@ -202,7 +202,7 @@ const TRAITS = [
 ];
 
 const QUICK_FACTS = [
-  { label: "Location",  value: "Ghaziabad, Uttar Pradesh, India",   href: undefined },
+  { label: "Location",  value: "Noida, India",   href: undefined },
   { label: "Degree",    value: "B.Tech (CSE) — NITRA Tech Campus", href: undefined },
   { label: "Degree Status", value: "Class of 2026",                 href: undefined },
   { label: "Email",     value: "umangpandey.co@gmail.com",          href: undefined },
@@ -219,6 +219,46 @@ const containerVariants = {
 const itemVariants = {
   hidden: { opacity: 0, y: 30 },
   show:   { opacity: 1, y: 0, transition: { duration: 0.6 } },
+};
+
+const ResumeDropdown = () => {
+  const [open, setOpen] = useState(false);
+  
+  return (
+    <div style={{ position: "relative" }}>
+      <button 
+        onClick={() => setOpen(!open)}
+        className="btn-secondary" 
+        id="about-cta-resume"
+        style={{ display: "flex", alignItems: "center", gap: "0.5rem", cursor: "pointer", fontFamily: "var(--font-body)", fontWeight: 600, fontSize: "0.9rem" }}
+      >
+        View Resume
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ transform: open ? "rotate(180deg)" : "rotate(0deg)", transition: "transform 0.2s" }}><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </button>
+      <AnimatePresence>
+        {open && (
+          <motion.div 
+            initial={{ opacity: 0, y: 10 }} 
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 10 }}
+            transition={{ duration: 0.2 }}
+            style={{ position: "absolute", bottom: "100%", left: 0, marginBottom: "0.5rem", background: "var(--color-card)", border: "1px solid var(--color-border)", borderRadius: "12px", padding: "0.5rem", display: "flex", flexDirection: "column", gap: "0.25rem", zIndex: 50, minWidth: "220px", boxShadow: "0 10px 40px rgba(0,0,0,0.5)", backdropFilter: "blur(12px)" }}
+          >
+            {[
+              { label: "🐍 Python Developer", file: "https://drive.google.com/file/d/1h1YGqukDLmixN22zfls6P2pK8ZcY5WG2/view?usp=sharing" },
+              { label: "📊 Data Analyst", file: "https://drive.google.com/file/d/1JnD7c6tvSf0UXRTA9nfn9x1iTE4jvhfn/view?usp=sharing" },
+              { label: "🔍 SEO Specialist", file: "https://drive.google.com/file/d/11YORci4WoyJ7-2A-BlVWuCdu438Z30uZ/view?usp=sharing" },
+              { label: "💻 Software Engineer", file: "https://drive.google.com/file/d/1sTbq2_eQV5Ri-xc7ehB1NsBiwF2K-I3P/view?usp=sharing" }
+            ].map(r => (
+              <a key={r.label} href={r.file} target="_blank" rel="noopener noreferrer" style={{ padding: "0.75rem 1rem", fontSize: "0.85rem", color: "var(--color-body)", textDecoration: "none", borderRadius: "8px", transition: "all 0.2s", fontFamily: "var(--font-body)", fontWeight: 500 }} onMouseEnter={(e) => { e.currentTarget.style.background = "var(--color-border-faint)"; e.currentTarget.style.color = "var(--color-heading)"; }} onMouseLeave={(e) => { e.currentTarget.style.background = "transparent"; e.currentTarget.style.color = "var(--color-body)"; }}>
+                {r.label}
+              </a>
+            ))}
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  );
 };
 
 const About = () => (
@@ -268,7 +308,8 @@ const About = () => (
               }}>
                 <img
                   src="/my.jpeg"
-                  alt="Umang Pandey — CS Student & Data Analyst"
+                  alt="Umang Pandey - Python Developer, Data Analyst and SEO Specialist from Noida, India"
+                  title="Umang Pandey - Python Developer and Data Analyst"
                   style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top center", display: "block" }}
                   onError={(e) => { (e.target as HTMLImageElement).src = "https://avatars.githubusercontent.com/u/269774892?v=4"; }}
                 />
@@ -294,7 +335,7 @@ const About = () => (
 
           <div style={{ flex: "1 1 280px", paddingTop: "0.5rem" }}>
             {[
-              "I'm Umang Pandey, a Computer Science student at NITRA Technical Campus in Ghaziabad, who genuinely enjoys querying datasets, building Power BI dashboards, and turning numbers into visual insights.",
+              "I'm Umang Pandey, a Computer Science student at NITRA Technical Campus in Noida, who genuinely enjoys querying datasets, building Power BI dashboards, and turning numbers into visual insights.",
               "I care about analyzing data patterns that help business decisions. I learn fast, take ownership of what I build, and enjoy transforming raw databases into clear visual stories.",
               "Beyond data, I explore full-stack web applications and machine learning, bridging the gap between database management and end-user visualizations.",
             ].map((para, i) => (
@@ -345,9 +386,7 @@ const About = () => (
               <a href="https://mail.google.com/mail/?view=cm&to=umangpandey.co@gmail.com" target="_blank" rel="noopener noreferrer" className="btn-primary" id="about-cta-email">
                 Send Me an Email
               </a>
-              <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="btn-secondary" id="about-cta-resume">
-                View Resume
-              </a>
+              <ResumeDropdown />
             </motion.div>
           </div>
         </div>
@@ -438,7 +477,7 @@ const About = () => (
 
         <motion.p initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}
           style={{ fontFamily: "var(--font-body)", fontSize: "1rem", color: "var(--color-body-muted)", lineHeight: 1.9, marginBottom: "2.5rem" }}>
-          Ghaziabad wasn't just a place to study; it became my sandbox. I spent hours building SQL schemas, querying mock databases, and learning how database relationships work. Every error in a JOIN query at midnight became a learning lesson.
+          Noida wasn't just a place to study; it became my sandbox. I spent hours building SQL schemas, querying mock databases, and learning how database relationships work. Every error in a JOIN query at midnight became a learning lesson.
         </motion.p>
 
         <motion.blockquote initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}
@@ -583,7 +622,7 @@ const About = () => (
             I hope you visualised or predicted something this week that helped solve a critical business bottleneck.
           </p>
           <p style={{ fontFamily: "'Georgia', serif", fontSize: "1rem", color: "var(--color-body-muted)", lineHeight: 1.9, marginBottom: "1.4rem" }}>
-            Right now it's 2026. I'm a final-year B.Tech CSE student in Ghaziabad, working on data visualizations, complex SQL schemas, and predictive ML models.
+            Right now it's 2026. I'm a final-year B.Tech CSE student in Noida, working on data visualizations, complex SQL schemas, and predictive ML models.
             I completed Tata virtual internships and built multiple dashboards that I'm proud of.
           </p>
           <p style={{ fontFamily: "'Georgia', serif", fontSize: "1rem", color: "var(--color-body-muted)", lineHeight: 1.9, marginBottom: "1.4rem" }}>

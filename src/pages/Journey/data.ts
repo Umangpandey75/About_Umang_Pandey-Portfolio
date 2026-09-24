@@ -154,7 +154,7 @@ export const ACHIEVEMENTS: Achievement[] = [
     color: "#E8A045",
     badge: "🎓",
     title: "B.Tech in Computer Science and Engineering",
-    org: "NITRA Technical Campus, Ghaziabad",
+    org: "NITRA Technical Campus, Noida",
     position: "Undergraduate",
     story: "Began my undergraduate studies in Computer Science and Engineering. Deeply exploring database architectures, Python programming, web stacks, data structures, and algorithms. Actively engaging in data science and analytics projects.",
   },

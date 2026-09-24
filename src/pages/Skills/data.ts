@@ -29,9 +29,11 @@ export const SKILLS: Skill[] = [
   { name: "GitHub",     cat: "Tools",     icon: `${CDN}/github/github-original.svg`,          color: "#ffffff"  },
   { name: "VS Code",    cat: "Tools",     icon: `${CDN}/vscode/vscode-original.svg`,          color: "#007ACC" },
   { name: "Jupyter",    cat: "Tools",     icon: `${CDN}/jupyter/jupyter-original.svg`,        color: "#F37626" },
+  /* SEO */
+  { name: "SEO",        cat: "SEO",       icon: `${CDN}/google/google-original.svg`,          color: "#4285F4" },
 ];
 
-export const CATEGORIES = ["All", "Language", "Database", "Analysis", "Web Tech", "Tools"];
+export const CATEGORIES = ["All", "Language", "Database", "Analysis", "Web Tech", "SEO", "Tools"];
 
 export const CAT_COLOR: Record<string, string> = {
   All:      "#E8A045",
@@ -39,6 +41,7 @@ export const CAT_COLOR: Record<string, string> = {
   Database: "#336791",
   Analysis: "#150458",
   "Web Tech": "#61DAFB",
+  SEO:      "#4285F4",
   Tools:    "#F05032",
 };
 
@@ -46,7 +49,7 @@ export const CAT_COLOR: Record<string, string> = {
 export const CODE_LINES = [
   { text: "const umang = new DataAnalyst({", color: "#E8A045" },
   { text: '  name: "Umang Pandey",', color: "#61DAFB" },
-  { text: '  stack: ["Python", "SQL", "Power BI"],', color: "#86efac" },
+  { text: '  stack: ["Python", "SQL", "Power BI", "SEO"],', color: "#86efac" },
   { text: '  passion: "Unlocking insights from data",', color: "#c4b5fd" },
   { text: "  available: true,  // ✅ Open to Internship", color: "#6ee7b7" },
   { text: "});", color: "#E8A045" },

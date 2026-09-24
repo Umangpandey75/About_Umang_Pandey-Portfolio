@@ -20,43 +20,9 @@ const NAV_LINKS = [
   { label: "Contact",  path: "/contact" },
 ];
 
-/* ── Creative geometric diamond logo ──────────────── */
+/* ── Brand Logo ──────────────── */
 const LogoMark = () => (
-  <svg viewBox="0 0 58 58" fill="none" aria-hidden="true" className="nav-logo-svg" style={{ width: "100%", height: "100%" }}>
-    <defs>
-      <linearGradient id="navLg1" x1="0%" y1="0%" x2="100%" y2="100%">
-        <stop offset="0%" stopColor="var(--color-accent-gold)" />
-        <stop offset="100%" stopColor="var(--color-accent-violet)" />
-      </linearGradient>
-      <linearGradient id="navLg2" x1="100%" y1="0%" x2="0%" y2="100%">
-        <stop offset="0%" stopColor="var(--color-accent-violet)" />
-        <stop offset="100%" stopColor="var(--color-accent-gold)" />
-      </linearGradient>
-    </defs>
-    {/* Outer diamond */}
-    <path d="M29 3 L55 29 L29 55 L3 29 Z" stroke="url(#navLg1)" strokeWidth="2" fill="rgba(232,160,69,0.05)" />
-    {/* Inner diamond */}
-    <path d="M29 13 L45 29 L29 45 L13 29 Z" stroke="url(#navLg2)" strokeWidth="1.5" fill="rgba(107,72,255,0.08)" />
-    {/* Centre dot */}
-    <circle cx="29" cy="29" r="3.5" fill="url(#navLg1)" />
-    {/* Corner dots */}
-    <circle cx="29" cy="3"  r="2" fill="var(--color-accent-gold)" opacity="0.9" />
-    <circle cx="55" cy="29" r="2" fill="var(--color-accent-violet)" opacity="0.9" />
-    <circle cx="29" cy="55" r="2" fill="var(--color-accent-gold)" opacity="0.9" />
-    <circle cx="3"  cy="29" r="2" fill="var(--color-accent-violet)" opacity="0.9" />
-    {/* UP text */}
-    <text
-      x="29" y="34"
-      textAnchor="middle"
-      fontFamily="Poppins, sans-serif"
-      fontWeight="900"
-      fontSize="14"
-      fill="url(#navLg1)"
-      letterSpacing="0.5"
-    >
-      UP
-    </text>
-  </svg>
+  <img src="/logo.png" alt="Umang Pandey Logo" className="nav-logo-svg" style={{ width: "100%", height: "100%", objectFit: "contain", borderRadius: "8px" }} />
 );
 
 /* ── Sun icon for light mode ── */

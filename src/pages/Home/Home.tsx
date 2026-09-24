@@ -139,6 +139,7 @@ const FEATURED = [
 /* ── Currently data ───────────────────── */
 const CURRENTLY = [
   { label: "Building",  value: "This 3D Portfolio v2.0 + Heart-IQ model adjustments", icon: "🔨", color: "#6B48FF" },
+  { label: "Optimizing", value: "Website architecture and content for search engines", icon: "🔍", color: "#4285F4" },
   { label: "Learning",  value: "Advanced SQL stored procedures + Machine Learning algorithms", icon: "📖", color: "#E8A045" },
   { label: "Analyzing", value: "Customer datasets to build interactive dashboards", icon: "📊", color: "#00CEA8" },
   { label: "Reading",   value: "Python for Data Analysis by Wes McKinney", icon: "📚", color: "#F472B6" },
@@ -253,15 +254,17 @@ const Home = () => {
               <span>Python Developer</span>
               <span style={{ color: "var(--color-accent-violet)", fontWeight: 700 }}>•</span>
               <span>Power BI Developer</span>
+              <span style={{ color: "var(--color-accent-violet)", fontWeight: 700 }}>•</span>
+              <span>SEO Specialist</span>
             </motion.div>
 
             <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5, duration: 0.7 }}
               className="hero-paragraph"
               style={{ fontFamily: "var(--font-body)", fontSize: "clamp(0.9rem, 1.8vw, 1.05rem)", color: "var(--color-body-muted)", maxWidth: 540, lineHeight: 1.85, marginBottom: "2.8rem" }}>
-              B.Tech CSE student at NITRA Technical Campus, Ghaziabad — analyzing data and
-              visualizing business insights. From{" "}
+              B.Tech CSE student at NITRA Technical Campus, Noida — analyzing data,
+              visualizing business insights, and driving organic growth through SEO. From{" "}
               <span style={{ color: "var(--color-inline-gold)", fontWeight: 500 }}>Power BI dashboards</span> to{" "}
-              <span style={{ color: "var(--color-inline-violet)", fontWeight: 500 }}>predictive models</span>, all live on the internet.
+              <span style={{ color: "var(--color-inline-violet)", fontWeight: 500 }}>predictive models</span> and technical search optimization.
             </motion.p>
 
             <motion.div className="hero-buttons-container" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.65 }}>
@@ -306,7 +309,7 @@ const Home = () => {
                 fontFamily: "var(--font-body)", fontSize: "0.78rem", fontWeight: 600, color: "var(--color-accent-violet-light)",
                 whiteSpace: "nowrap", alignItems: "center", gap: "0.45rem" }}>
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              Ghaziabad, India
+              Noida, India
             </motion.div>
             <motion.div className="lg-only-badge" animate={{ y: [0, 10, 0] }} transition={{ repeat: Infinity, duration: 4, delay: 0.7 }}
               style={{ position: "absolute", bottom: 20, right: -95, zIndex: 3, background: "var(--color-nav-bg-mobile)", backdropFilter: "blur(12px)",
@@ -413,6 +416,16 @@ const Home = () => {
                   <li>Integrate AI-powered features into analytical applications</li>
                 </ul>
               </div>
+
+              <div style={{ background: "rgba(255,255,255,0.02)", padding: "1.5rem", borderRadius: "12px", border: "1px solid rgba(255,255,255,0.05)" }}>
+                <h4 style={{ color: "#4285F4", fontWeight: 700, marginBottom: "0.8rem", fontSize: "1.1rem" }}>🔍 Search Engine Optimization</h4>
+                <ul style={{ listStyleType: "disc", paddingLeft: "1.2rem", color: "var(--color-body-muted)", display: "flex", flexDirection: "column", gap: "0.5rem" }}>
+                  <li>Conduct keyword research and content mapping</li>
+                  <li>Perform comprehensive technical SEO audits</li>
+                  <li>Optimize on-page content, meta tags, and architecture</li>
+                  <li>Monitor traffic & track rankings via Google Analytics</li>
+                </ul>
+              </div>
             </div>
 
             <h3 style={{ fontFamily: "var(--font-heading)", fontSize: "1.5rem", color: "var(--color-heading)", marginBottom: "1rem" }}>My Approach</h3>
@@ -497,7 +510,7 @@ const Home = () => {
                       <TermLine text='{' delay={200} color="rgba(0,255,65,0.5)" />
                       <TermLine text='  "name": "Umang Pandey",' delay={450} color="rgba(0,255,65,0.85)" />
                       <TermLine text='  "role": "CS Student + Data Analyst",' delay={700} color="rgba(0,255,65,0.85)" />
-                      <TermLine text='  "location": "Ghaziabad, India 🇮🇳",' delay={950} color="rgba(0,255,65,0.85)" />
+                      <TermLine text='  "location": "Noida, India 🇮🇳",' delay={950} color="rgba(0,255,65,0.85)" />
                       <TermLine text='  "degree": "B.Tech CSE",' delay={1200} color="rgba(232,160,69,0.9)" />
                       <TermLine text='  "internship": "TATA Data Analyst (Virtual)",' delay={1450} color="rgba(34,197,94,0.9)" />
                       <TermLine text='  "status": "seeking_internship",' delay={1700} color="rgba(232,160,69,0.9)" />

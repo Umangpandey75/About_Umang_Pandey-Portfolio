@@ -361,6 +361,7 @@ const Skills = () => {
                 { title: "Data Visualization", body: "Designing interactive, insightful Power BI dashboards and reports that translate raw numbers into business decisions." },
                 { title: "SQL & Databases",    body: "Writing optimized queries, views, stored procedures and triggers to manage and extract relational data." },
                 { title: "Python Analysis",    body: "Using libraries like Pandas, NumPy, Matplotlib, and Scikit-learn to clean datasets, run EDA, and build ML models." },
+                { title: "SEO & Growth",       body: "Driving organic traffic with technical audits, on-page optimization, keyword strategy, and analytics tracking." },
               ].map((item) => (
                 <div key={item.title} style={{ flex: "1 1 220px" }}>
                   <div style={{ width: 36, height: 3, background: "linear-gradient(90deg, var(--color-accent-gold), var(--color-accent-violet))", borderRadius: 2, marginBottom: "0.9rem" }} />
@@ -370,6 +371,80 @@ const Skills = () => {
               ))}
             </div>
           </motion.div>
+        </div>
+      </section>
+
+      {/* ── SEO TOOLKIT ── */}
+      <section style={{ position: "relative", zIndex: 1, padding: "6rem 0", borderTop: "1px solid var(--color-border)" }}>
+        <div style={{ position: "absolute", inset: 0, background: "radial-gradient(ellipse 60% 50% at 50% 100%, rgba(66,133,244,0.06) 0%, transparent 70%)", pointerEvents: "none" }} />
+        <div className="section-wrapper">
+          <motion.p initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+            style={{ fontFamily: "var(--font-body)", fontSize: "0.78rem", color: "#4285F4", textTransform: "uppercase", letterSpacing: "0.16em", fontWeight: 600, marginBottom: "0.5rem" }}>
+            Search Engine Optimization
+          </motion.p>
+          <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}
+            style={{ fontFamily: "var(--font-heading)", fontWeight: 900, fontSize: "clamp(1.8rem, 4vw, 3rem)", color: "var(--color-heading)", marginBottom: "0.75rem" }}>
+            My SEO <span style={{ color: "#4285F4" }}>Toolkit</span> 🔍
+          </motion.h2>
+          <motion.p initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.15 }}
+            style={{ fontFamily: "var(--font-body)", fontSize: "0.92rem", color: "var(--color-body-muted)", marginBottom: "3rem", maxWidth: 650, lineHeight: 1.75 }}>
+            A comprehensive breakdown of my expertise in driving organic traffic, optimizing web architecture, and outranking competitors through data-driven strategies.
+          </motion.p>
+
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "1.5rem" }}>
+            {[
+              {
+                title: "On-Page & Content",
+                icon: "📝",
+                color: "#E8A045",
+                skills: ["Keyword Research & Analysis", "Keyword Mapping", "On-Page SEO", "Content Optimization", "Meta Title & Description", "Image SEO & Alt Tags"]
+              },
+              {
+                title: "Technical Architecture",
+                icon: "⚙️",
+                color: "#61DAFB",
+                skills: ["Technical SEO", "Website SEO Audit", "URL Optimization", "Internal Linking", "Canonical Tags", "301/302 Redirects", "XML Sitemap & Robots.txt"]
+              },
+              {
+                title: "Off-Page & Authority",
+                icon: "🔗",
+                color: "#FF9900",
+                skills: ["Off-Page SEO", "Backlink Building & Analysis", "Link Building", "Competitor Analysis"]
+              },
+              {
+                title: "Analytics & Tools",
+                icon: "📈",
+                color: "#27C93F",
+                skills: ["Google Search Console", "Google Analytics", "SEO Performance Monitoring", "SEO Reporting", "WordPress & Basic HTML/CSS", "Ahrefs, SEMrush, Screaming Frog"]
+              }
+            ].map((category, i) => (
+              <motion.div key={category.title}
+                initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }} transition={{ delay: i * 0.1 }}
+              >
+                <div style={{
+                  height: "100%", padding: "1.8rem", borderRadius: 20,
+                  background: "var(--color-card)", border: `1px solid ${category.color}25`,
+                  transition: "all 0.3s ease"
+                }}
+                onMouseEnter={e => { const el = e.currentTarget as HTMLDivElement; el.style.borderColor = `${category.color}60`; el.style.boxShadow = `0 10px 30px ${category.color}15`; }}
+                onMouseLeave={e => { const el = e.currentTarget as HTMLDivElement; el.style.borderColor = `${category.color}25`; el.style.boxShadow = "none"; }}>
+                  <div style={{ display: "flex", alignItems: "center", gap: "0.75rem", marginBottom: "1.2rem" }}>
+                    <span style={{ fontSize: "1.8rem" }}>{category.icon}</span>
+                    <h3 style={{ fontFamily: "var(--font-heading)", fontWeight: 800, fontSize: "1.1rem", color: "var(--color-heading)" }}>{category.title}</h3>
+                  </div>
+                  <div style={{ display: "flex", flexDirection: "column", gap: "0.6rem" }}>
+                    {category.skills.map((skill, j) => (
+                      <div key={j} style={{ display: "flex", alignItems: "flex-start", gap: "0.5rem" }}>
+                        <span style={{ color: category.color, marginTop: "0.15rem", fontSize: "0.8rem" }}>▹</span>
+                        <span style={{ fontFamily: "var(--font-body)", fontSize: "0.88rem", color: "var(--color-body-muted)", lineHeight: 1.5 }}>{skill}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 

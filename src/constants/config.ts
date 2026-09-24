@@ -37,10 +37,10 @@ export const config: SiteConfig = {
   bio_short:
     "A motivated Computer Science student skilled in Python, SQL, and Power BI. Experienced in data analysis, dashboard building, and delivering data-driven insights.",
   bio_long:
-    "I am a Computer Science student at NITRA Technical Campus, Ghaziabad, with a passion for data analysis and visualization. My academic projects and internships have allowed me to gain hands-on experience in python data libraries, SQL databases, and Power BI dashboards. I learn fast, take ownership of what I build, and enjoy transforming complex datasets into clear, actionable visual insights to support strategic decision-making.",
+    "I am a Computer Science student at NITRA Technical Campus, Noida, with a passion for data analysis and visualization. My academic projects and internships have allowed me to gain hands-on experience in python data libraries, SQL databases, and Power BI dashboards. I learn fast, take ownership of what I build, and enjoy transforming complex datasets into clear, actionable visual insights to support strategic decision-making.",
   email:      "umangpandey.co@gmail.com",
   phone:      "+91 7518593228",
-  location:   "Ghaziabad, Uttar Pradesh, India",
+  location:   "Noida, India",
   github:     "https://github.com/Umangpandey75",
   linkedin:   "https://linkedin.com/in/umang-pandey-01b486273",
   resume_url: "/resume.pdf",

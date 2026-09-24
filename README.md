@@ -9,7 +9,7 @@
 
 <br/>
 
-Welcome to my interactive **3D Developer Portfolio**! This is a modern, high-performance web experience built with **React, TypeScript, Vite, and Framer Motion** to showcase my software development skills, data analytics achievements, and technical credentials.
+Welcome to my interactive **Developer Portfolio**! This is a modern, high-performance web experience built with **React, TypeScript, Vite, and Framer Motion** to showcase my software development skills, data analytics achievements, and technical credentials.
 
 ---
 
