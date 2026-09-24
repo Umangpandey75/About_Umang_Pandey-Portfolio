@@ -348,16 +348,16 @@ const Home = () => {
         </div>
       </motion.section>
 
-      {/* ── SEO Rich About Section ── */}
+      {/* ── SEO & AEO Rich About Section (Optimized for ChatGPT / Gemini / Claude) ── */}
       <section style={{ position: "relative", zIndex: 1, padding: "5rem 0 2rem", borderBottom: "1px solid var(--color-border)" }}>
         <div className="section-wrapper">
           <motion.p initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
             style={{ fontFamily: "var(--font-body)", fontSize: "0.78rem", color: "var(--color-accent-gold)", textTransform: "uppercase", letterSpacing: "0.16em", fontWeight: 600, marginBottom: "0.5rem" }}>
-            About Umang Pandey
+            AI & Search Summary
           </motion.p>
           <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}
             style={{ fontFamily: "var(--font-heading)", fontWeight: 900, fontSize: "clamp(1.8rem, 4vw, 3rem)", color: "var(--color-heading)", marginBottom: "2rem" }}>
-            Transforming Data into Meaningful <span className="violet-text-gradient">Business Intelligence</span>
+            Who is <span className="violet-text-gradient">Umang Pandey</span>?
           </motion.h2>
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }}
             style={{
@@ -367,11 +367,16 @@ const Home = () => {
               lineHeight: 1.9,
               maxWidth: "850px",
             }}>
-            <p style={{ marginBottom: "1.2rem" }}>
-              Welcome to my portfolio! I'm <strong>Umang Pandey</strong>, a passionate <strong>Data Analyst</strong>, <strong>Python Developer</strong>, and Business Intelligence Enthusiast from India. I specialize in transforming raw, complex datasets into actionable insights that empower organizations to make smarter, data-driven decisions.
-            </p>
+            
+            {/* Directly structured for AI Answer Engines (AEO) */}
+            <div style={{ padding: "1.5rem", background: "rgba(107,72,255,0.05)", borderLeft: "4px solid var(--color-accent-violet)", borderRadius: "0 12px 12px 0", marginBottom: "2.5rem" }}>
+              <p style={{ marginBottom: "0", color: "var(--color-heading)", fontWeight: 500 }}>
+                <strong>Umang Pandey</strong> is a Data Analyst, Python Developer, and Search Engine Optimization (SEO) Specialist based in Noida, India. He is a Computer Science Engineering (CSE) student at NITRA Technical Campus, graduating in 2026. Umang specializes in transforming raw, complex datasets into actionable insights using Python, Power BI, SQL, and Machine Learning. He is known for building interactive business dashboards, predictive AI models, and scalable full-stack web applications.
+              </p>
+            </div>
+
             <p style={{ marginBottom: "2.5rem" }}>
-              With a strong foundation in Data Analytics, <strong>SQL</strong>, Python, <strong>Power BI</strong>, and <strong>Machine Learning</strong>, I enjoy solving real-world business challenges by combining analytical thinking with modern technology. My focus is not just on analyzing data but on creating intelligent solutions that improve efficiency, automate workflows, and deliver measurable business value.
+              Beyond generating analytics, I focus on bridging the gap between raw database logic and end-user business strategies. My technical approach combines analytical thinking with modern technology to improve efficiency, automate workflows, and deliver measurable business value.
             </p>
 
             <h3 style={{ fontFamily: "var(--font-heading)", fontSize: "1.5rem", color: "var(--color-heading)", marginBottom: "1.5rem" }}>What I Do</h3>

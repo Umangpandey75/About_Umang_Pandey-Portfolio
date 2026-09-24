@@ -16,54 +16,84 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Umang Pandey",
-      "url": "https://www.umangpandey.in",
-      "image": "https://www.umangpandey.in/my.jpeg",
-      "jobTitle": "Python Developer, Data Analyst & SEO Specialist",
-      "description": "Umang Pandey is a Computer Science student, Data Analyst, Python Developer, and SEO Specialist from Noida, India.",
-      "email": "umangpandey.co@gmail.com",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Noida",
-        "addressRegion": "Uttar Pradesh",
-        "addressCountry": "India"
-      },
-      "alumniOf": {
-        "@type": "CollegeOrUniversity",
-        "name": "NITRA Technical Campus"
-      },
-      "knowsAbout": [
-        "Data Analysis",
-        "Python Development",
-        "Search Engine Optimization (SEO)",
-        "Software Engineering",
-        "Machine Learning",
-        "React",
-        "Web Development"
-      ],
-      "sameAs": [
-        "https://github.com/Umangpandey75",
-        "https://www.linkedin.com/in/umang-pandey-01b486273",
-        "https://www.instagram.com/umangpandey_1?stkn=Ymxndzg0eGQwNXV3"
+      "@graph": [
+        {
+          "@type": "Person",
+          "@id": "https://www.umangpandey.in/#person",
+          "name": "Umang Pandey",
+          "url": "https://www.umangpandey.in",
+          "image": {
+            "@type": "ImageObject",
+            "@id": "https://www.umangpandey.in/#primaryimage",
+            "url": "https://www.umangpandey.in/my.jpeg",
+            "caption": "Umang Pandey"
+          },
+          "jobTitle": [
+            "Data Analyst",
+            "Python Developer",
+            "SEO Specialist",
+            "Software Engineer"
+          ],
+          "description": "Umang Pandey is a Data Analyst, Python Developer, and SEO Specialist from Noida, India.",
+          "gender": "Male",
+          "nationality": "Indian",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Noida",
+            "addressRegion": "Uttar Pradesh",
+            "addressCountry": "IN"
+          },
+          "alumniOf": {
+            "@type": "CollegeOrUniversity",
+            "name": "NITRA Technical Campus"
+          },
+          "knowsAbout": [
+            "Data Analysis",
+            "Python",
+            "Search Engine Optimization (SEO)",
+            "Machine Learning",
+            "Power BI",
+            "SQL",
+            "React"
+          ],
+          "sameAs": [
+            "https://github.com/Umangpandey75",
+            "https://www.linkedin.com/in/umang-pandey-01b486273",
+            "https://www.instagram.com/umangpandey_1?stkn=Ymxndzg0eGQwNXV3"
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://www.umangpandey.in/#website",
+          "url": "https://www.umangpandey.in",
+          "name": "Umang Pandey Portfolio",
+          "description": "Official Portfolio of Umang Pandey - Data Analyst & Python Developer",
+          "publisher": {
+            "@id": "https://www.umangpandey.in/#person"
+          }
+        }
       ]
     }
     </script>
 
     <!-- Open Graph -->
-    <meta property="og:title" content="Umang Pandey | Data Analyst | Python Developer" />
-    <meta property="og:description" content="Umang Pandey is a Data Analyst and Python Developer from India. Explore projects, dashboards, Power BI, SQL, Machine Learning, web development, resume, certifications, and portfolio." />
+    <meta property="og:title" content="Umang Pandey | Data Analyst, Python Developer & SEO Specialist" />
+    <meta property="og:description" content="Umang Pandey is a Data Analyst, Python Developer, and SEO Specialist from Noida, India. Explore his data dashboards, machine learning models, and full-stack projects." />
     <meta property="og:url" content="https://www.umangpandey.in" />
     <meta property="og:site_name" content="Umang Pandey Portfolio" />
     <meta property="og:locale" content="en_US" />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://www.umangpandey.in/og-image.png" />
+    <meta property="og:type" content="profile" />
+    <meta property="og:image" content="https://www.umangpandey.in/my.jpeg" />
+    <meta property="og:image:width" content="800" />
+    <meta property="og:image:height" content="800" />
+    <meta property="profile:first_name" content="Umang" />
+    <meta property="profile:last_name" content="Pandey" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Umang Pandey | Data Analyst | Python Developer" />
-    <meta name="twitter:description" content="Umang Pandey is a Data Analyst and Python Developer from India. Explore projects, dashboards, Power BI, SQL, Machine Learning, web development, resume, certifications, and portfolio." />
-    <meta name="twitter:image" content="https://www.umangpandey.in/og-image.png" />
+    <meta name="twitter:title" content="Umang Pandey | Data Analyst, Python Developer & SEO Specialist" />
+    <meta name="twitter:description" content="Umang Pandey is a Data Analyst, Python Developer, and SEO Specialist from Noida, India. Explore his data dashboards, machine learning models, and full-stack projects." />
+    <meta name="twitter:image" content="https://www.umangpandey.in/my.jpeg" />
 
     <!-- Google Fonts: Poppins 700 (headings) + Inter 400/500 (body) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
