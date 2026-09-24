@@ -45,7 +45,7 @@ const Resume = () => {
               { label: "Data Analyst", file: "https://drive.google.com/file/d/1JnD7c6tvSf0UXRTA9nfn9x1iTE4jvhfn/view?usp=sharing", icon: "📊", color: "var(--color-accent-violet-light)" },
               { label: "SEO Specialist", file: "https://drive.google.com/file/d/11YORci4WoyJ7-2A-BlVWuCdu438Z30uZ/view?usp=sharing", icon: "🔍", color: "#4285F4" },
               { label: "Software Engineer", file: "https://drive.google.com/file/d/1sTbq2_eQV5Ri-xc7ehB1NsBiwF2K-I3P/view?usp=sharing", icon: "💻", color: "var(--color-accent-gold)" }
-            ].map((resume, idx) => (
+            ].map((resume) => (
               <a
                 key={resume.label}
                 href={resume.file}
